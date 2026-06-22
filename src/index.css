@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Premium theme palette configuration */
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #FFB703; /* Official gold requested */
+  --color-gold-600: #e09b00;
+  --color-gold-700: #c27f00;
+  --color-gold-800: #9e6400;
+  --color-gold-900: #78350f;
+
+  --color-ocean-50: #f0f7ff;
+  --color-ocean-100: #e0effe;
+  --color-ocean-200: #badbfc;
+  --color-ocean-300: #7cbdfa;
+  --color-ocean-400: #3ca2f5;
+  --color-ocean-500: #00B4D8; /* Official teal requested */
+  --color-ocean-600: #0a80e0;
+  --color-ocean-700: #0159b3;
+  --color-ocean-800: #0a2552;
+  --color-ocean-900: #0A1F44; /* Official dark blue requested */
+  --color-ocean-950: #051026;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0A1F44 0%, #063161 50%, #00B4D8 100%) !important;
+  background-attachment: fixed;
+  color: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* Premium stylized thin scrollbar which fits premium booking platforms */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A1F44;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFB703;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fbbf24;
+}
+
+/* Glassmorphism system class utilities */
+.glass-panel {
+  background: rgba(10, 31, 68, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer-pulse 1.5s infinite;
+}
+
+@keyframes shimmer-pulse {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Community Photo Showcase - existing photos hide */
+.community-photo-grid img,
+.community-photo-grid .photo-item {
+  display: none !important;
+}
+
+/* + Add Your Capture button big + center */
+.community-photo-grid {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 300px !important;
+  grid-template-columns: 1fr !important;
+}
+
+.green-button-class {
+  width: 250px !important;
+  height: 250px !important;
+  border-radius: 20px !important;
+  border: 3px dashed #fff !important;
+  background: rgba(255,255,255,0.1) !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+/* + symbol එක ලොකු කරනවා */
+button svg, 
+button .icon-plus {
+  width: 80px !important;
+  height: 80px !important;
+  stroke-width: 3 !important;
+}
+
+/* Global Nomad Stream - All reviewer photos to emoji */
+.global-nomad-stream .review-avatar img,
+.review-card .avatar img {
+  display: none !important;
+}
+
+.global-nomad-stream .review-avatar,
+.review-card .avatar {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+  position: relative !important;
+}
+
+/* Emoji + First letter show කරනවා */
+.global-nomad-stream .review-avatar::after,
+.review-card .avatar::after {
+  content: "🌍" attr(data-initial);
+  font-size: 18px !important;
+  color: white !important;
+  font-weight: bold !important;
+}
+
+/* එක එක review එකට වෙනස් emoji */
+.review-card:nth-child(1) .avatar::after,
+.global-nomad-stream > div:nth-child(1) .review-avatar::after { content: "✈️ " attr(data-initial); }
+.review-card:nth-child(2) .avatar::after,
+.global-nomad-stream > div:nth-child(2) .review-avatar::after { content: "🏔️ " attr(data-initial); }
+.review-card:nth-child(3) .avatar::after,
+.global-nomad-stream > div:nth-child(3) .review-avatar::after { content: "🌴 " attr(data-initial); }
+.review-card:nth-child(4) .avatar::after,
+.global-nomad-stream > div:nth-child(4) .review-avatar::after { content: "📸 " attr(data-initial); }
+.review-card:nth-child(5) .avatar::after,
+.global-nomad-stream > div:nth-child(5) .review-avatar::after { content: "🧳 " attr(data-initial); }
+.review-card:nth-child(6) .avatar::after,
+.global-nomad-stream > div:nth-child(6) .review-avatar::after { content: "🗺️ " attr(data-initial); }
+
+/* Sri Lanka Travel Journal - Hide card images, show logo */
+.chronicle-card img,
+.chronicle-card .card-image,
+[class*="chronicle"] img {
+  display: none !important;
+}
+
+.chronicle-card .card-image,
+.chronicle-card [class*="image"] {
+  background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 200px !important;
+  position: relative !important;
+}
+
+/* Logo එක center කරනවා */
+.chronicle-card .card-image::after {
+  content: "" !important;
+  width: 120px !important;
+  height: 120px !important;
+  background-image: url('/logo.png') !important; /* උඹේ logo link එක දාපන් */
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* Highland Drone & Coast Gallery hide */
+.highland-drone-gallery,
+[class*="drone-gallery"],
+[class*="gallery-section"] {
+  display: none !important;
+}
+
+/* Text description area style */
+.place-description-box {
+  background: #0f172a !important;
+  padding: 30px !important;
+  border-radius: 12px !important;
+  border-left: 4px solid #3b82f6 !important;
+  margin-top: 20px !important;
+  color: #e2e8f0 !important;
+  line-height: 1.8 !important;
+  font-size: 16px !important;
+}
+
+.place-description-box h3 {
+  color: #60a5fa !important;
+  font-size: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+/* Premium micro-interactions and visual enhancements */
+.chronicle-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+
+.chronicle-card:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 12px 24px -10px rgba(0, 180, 216, 0.25) !important;
+  border-color: rgba(255, 183, 3, 0.3) !important;
+}
+
+/* Desktop header navigation link adjustments */
+header nav button {
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease !important;
+}
+
+header nav button:hover {
+  transform: translateY(-1px) !important;
+}
+
+/* Mobile bottom nav active press animation */
+.fixed.bottom-0 button {
+  transition: transform 0.2s ease, color 0.2s ease !important;
+}
+
+.fixed.bottom-0 button:active {
+  transform: scale(0.9) !important;
+}
+
+/* Premium typography rules */
+h1, h2, h3 {
+  letter-spacing: -0.02em !important;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11" !important;
+}
+
+
