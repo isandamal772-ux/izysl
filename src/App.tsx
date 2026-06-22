@@ -251,6 +251,74 @@ function getClientFallbackDailyBlog(): any {
   };
 }
 
+function getClientFallbackDailyTip(todayStr: string): any {
+  const fallbackTips = [
+    {
+      title: "Dialog & Mobitel 4G Connectivity",
+      content: "For reliable coverage across the central highlands and coastal villages, purchase a Dialog or Mobitel eSIM. Dialog generally has the highest coverage density in remote mountainous zones."
+    },
+    {
+      title: "Cash is King in Rural Towns",
+      content: "Carry local rupees (LKR) at all times. While high-end hotels accept credit cards, local seafood cafes, surf instructors, national park fees, and tuk-tuk drivers only accept cash."
+    },
+    {
+      title: "Respect Buddha Statues & Temples",
+      content: "Never pose with your back turned directly to a Buddha statue for photographs, as it is considered a serious mark of disrespect. Always ask permission before photographing monks."
+    },
+    {
+      title: "Safety Flags on Southern Beaches",
+      content: "During monsoon seasons, strong rip currents occur along the southern coast. Never enter the water when red warning flags are displayed on the sands of Mirissa or Hikkaduwa."
+    },
+    {
+      title: "Type G plug & Round Adaptors",
+      content: "Sri Lanka utilizes standard rectangular British 3-pin G plugs, alongside round 3-pin D/M plugs. Carry a universal adaptor, and use the 'pen trick' to open round pin outlets safely if needed."
+    },
+    {
+      title: "Monsoon Season Split Planning",
+      content: "Planning is key: the South & West coast beaches (Unawatuna, Weligama) are sunny from November to April, while the East coast beaches (Pasikuda, Nilaveli) shine from May to September."
+    },
+    {
+      title: "Wild Elephant Highway Etiquette",
+      content: "Do not stop your vehicle, honk, or feed wild elephants that stand near roadsides (like the Buttala-Sella Kataragama road). Keep windows closed and drive by slowly and quietly."
+    },
+    {
+      title: "PickMe & Uber for fair pricing",
+      content: "Download PickMe and Uber upon arrival in Colombo. They guarantee metered rates for tuk-tuks and cars, which protects you from tourist price inflation in cities."
+    },
+    {
+      title: "Drinking Water Safety Guard",
+      content: "Never drink un-filtered tap water. Use bottled mineral water or filtered water provided at your eco-villas, and use bottled water for brushing your teeth in rural areas."
+    },
+    {
+      title: "Temple Dress Modesty Rules",
+      content: "Always wear white or light-colored clothing that covers both shoulders and knees when visiting historical ruins. Keep a clean sarong in your backpack for instant cover."
+    },
+    {
+      title: "Sinharaja Rainforest Leech Guard",
+      content: "When trekking Sinharaja or Knuckles forest paths, apply lemon oil, soap, or tobacco water to your legs, and wear tall leech socks to prevent bites on damp forest floors."
+    },
+    {
+      title: "King Coconut Hydration (Thambili)",
+      content: "Drink fresh orange King Coconut (Thambili) water sold by roadside vendors. It is clean, rich in electrolytes, and the perfect hydration cure under the hot tropical sun."
+    },
+    {
+      title: "Kottu Roti & Local Spices",
+      content: "Sample fresh Kottu Roti at popular street stalls. If you have a sensitive stomach, request 'tourist mild' as local Sri Lankan spices can be exceptionally hot."
+    },
+    {
+      title: "Tuk-Tuk price negotiations",
+      content: "In rural towns where ride-sharing apps aren't active, negotiate the price with the tuk-tuk driver *before* getting in. Standard rural rates are roughly 150-200 LKR per kilometer."
+    },
+    {
+      title: "Mosquito Protection Essentials",
+      content: "Sri Lanka has zero malaria risk, but Dengue fever is present. Always apply high-DEET insect repellent, especially at sunrise and sunset when mosquitoes are highly active."
+    }
+  ];
+  const dateHash = todayStr.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const dayIndex = Math.max(0, dateHash) % fallbackTips.length;
+  return fallbackTips[dayIndex];
+}
+
 export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [currentUser, setCurrentUser] = useState<any>(null);
@@ -652,7 +720,9 @@ export default function App() {
       })
       .catch((err) => {
         console.warn("Using client-side static travel tips fallback:", err);
-        setTravelTips(TRAVEL_TIPS);
+        const todayStr = new Date().toISOString().split("T")[0];
+        const clientDailyTip = getClientFallbackDailyTip(todayStr);
+        setTravelTips([...TRAVEL_TIPS, clientDailyTip]);
       });
   }, []);
 
