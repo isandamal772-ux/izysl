@@ -60,8 +60,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Trek guide optional, $10-$15 recommended)",
     bestTime: "September to May",
     imageUrls: [
-      "https://unsplash.com/photos/HiA7oY9XTq8/download?force=true",
-      "https://unsplash.com/photos/jctETpiXEfM/download?force=true"
+      "https://images.unsplash.com/photo-1697811810067-4dcae11d3f77?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1687670944885-ed956fdb486f?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
   },
@@ -80,7 +80,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Included in Horton Plains National Park ticket ($25-$35 per person)",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/ytNk5s_4Wys/download?force=true",
+      "https://images.unsplash.com/photo-1609515286252-3429567a66fd?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -100,7 +100,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/vQKXEfXBSZk/download?force=true",
+      "https://images.unsplash.com/photo-1703566567802-e1945c83f0cb?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -120,7 +120,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1 (approx. 300 LKR)",
     bestTime: "January to March",
     imageUrls: [
-      "https://unsplash.com/photos/baTghOgY8sA/download?force=true",
+      "https://images.unsplash.com/photo-1683041527005-58a56908dd01?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -140,7 +140,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$2.50 (approx. 800 LKR)",
     bestTime: "June to September",
     imageUrls: [
-      "https://unsplash.com/photos/mm-D2F_XbKg/download?force=true",
+      "https://images.unsplash.com/photo-1683604393889-60baf8b7eb15?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1546708973-b339540b5162?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -161,7 +161,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1 (approx. 300 LKR)",
     bestTime: "February to April",
     imageUrls: [
-      "https://unsplash.com/photos/8cQEBc8gfx0/download?force=true",
+      "https://images.unsplash.com/photo-1666331688371-8299c0c5f25c?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -201,7 +201,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/sTHBllmt7o0/download?force=true",
+      "https://images.unsplash.com/photo-1580635553747-1c5eac66ff90?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -221,7 +221,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/A4rDazNFLog/download?force=true",
+      "https://images.unsplash.com/photo-1643741444323-5dbbe8902a98?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -241,7 +241,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/QsrJ3UhMfhM/download?force=true",
+      "https://images.unsplash.com/photo-1762104197915-088ef89e3ecf?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
