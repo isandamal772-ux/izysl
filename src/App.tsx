@@ -3807,26 +3807,46 @@ export default function App() {
                 {/* 7. SOCIAL PLATFORMS SHARE BOX */}
                 <div className="bg-slate-50 dark:bg-slate-950/20 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
                   <span className="text-xs font-bold">Share to Southern Wanderers & Communities:</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <button
                       onClick={() => {
-                        const shareUrl = `https://reddit.com/r/travel/submit?title=${encodeURIComponent("Sri Lanka travel help required or tips on: " + selectedBlog.title)}&url=https://izysl.com`;
+                        const shareUrl = `https://reddit.com/r/travel/submit?title=${encodeURIComponent("Sri Lanka travel help required or tips on: " + selectedBlog.title)}&url=${encodeURIComponent("https://izysl.com/blog/" + selectedBlog.id)}`;
                         window.open(shareUrl, "_blank");
                         triggerToast("Opened Reddit share page with preset target title!", "success");
                       }}
                       className="bg-[#FF4500] hover:bg-[#ff5722] text-white text-[10px] font-sans font-bold px-3 py-2 rounded-lg flex items-center gap-1 cursor-pointer"
                     >
-                      Share on Reddit
+                      Reddit
                     </button>
                     <button
                       onClick={() => {
-                        const shareTitle = `https://facebook.com/sharer/sharer.php?u=https://izysl.com`;
-                        window.open(shareTitle, "_blank");
+                        const shareUrl = `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://izysl.com/blog/" + selectedBlog.id)}`;
+                        window.open(shareUrl, "_blank");
                         triggerToast("Opened Facebook share link!", "success");
                       }}
                       className="bg-[#1877F2] hover:bg-[#166fe5] text-white text-[10px] font-sans font-bold px-3 py-2 rounded-lg flex items-center gap-1 cursor-pointer"
                     >
                       Facebook
+                    </button>
+                    <button
+                      onClick={() => {
+                        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(selectedBlog.title + " - " + "https://izysl.com/blog/" + selectedBlog.id)}`;
+                        window.open(whatsappUrl, "_blank");
+                        triggerToast("Opened WhatsApp share dialog!", "success");
+                      }}
+                      className="bg-[#25D366] hover:bg-[#20ba5a] text-white text-[10px] font-sans font-bold px-3 py-2 rounded-lg flex items-center gap-1 cursor-pointer"
+                    >
+                      WhatsApp
+                    </button>
+                    <button
+                      onClick={() => {
+                        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out this awesome Sri Lanka guide: " + selectedBlog.title)}&url=${encodeURIComponent("https://izysl.com/blog/" + selectedBlog.id)}&hashtags=SriLanka,Travel`;
+                        window.open(twitterUrl, "_blank");
+                        triggerToast("Opened X/Twitter share link!", "success");
+                      }}
+                      className="bg-black hover:bg-slate-900 text-white text-[10px] font-sans font-bold px-3 py-2 rounded-lg flex items-center gap-1 cursor-pointer"
+                    >
+                      Twitter/X
                     </button>
                     <button
                       onClick={() => {
