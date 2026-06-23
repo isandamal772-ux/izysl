@@ -3,6 +3,10 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.ts" },
     { "source": "/sitemap.xml", "destination": "/api/index.ts" },
+    { "source": "/blog/(.*)", "destination": "/api/index.ts" },
+    { "source": "/place/(.*)", "destination": "/api/index.ts" },
+    { "source": "/hotel/(.*)", "destination": "/api/index.ts" },
+    { "source": "/restaurant/(.*)", "destination": "/api/index.ts" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

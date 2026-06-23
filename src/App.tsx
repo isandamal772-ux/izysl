@@ -2496,6 +2496,36 @@ export default function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* Dynamic SEO JSON-LD Schema Markup injection for Place */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "TouristAttraction",
+                  "@id": `https://izysl.com/place/${selectedPlace.id}`,
+                  "name": selectedPlace.name,
+                  "description": selectedPlace.description,
+                  "image": selectedPlace.imageUrl || selectedPlace.imageUrls?.[0],
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": selectedPlace.location || "Sri Lanka",
+                    "addressCountry": "LK"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": selectedPlace.latitude,
+                    "longitude": selectedPlace.longitude
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": selectedPlace.rating,
+                    "reviewCount": selectedPlace.reviewsCount || 10
+                  }
+                })
+              }}
+            />
+
             <motion.div
               id="modal-place-body"
               className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
@@ -3553,6 +3583,37 @@ export default function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* Dynamic SEO JSON-LD Schema Markup injection for Hotel */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Hotel",
+                  "@id": `https://izysl.com/hotel/${selectedHotel.id}`,
+                  "name": selectedHotel.name,
+                  "description": selectedHotel.description,
+                  "image": selectedHotel.imageUrl,
+                  "priceRange": selectedHotel.priceRange,
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": selectedHotel.location || "Sri Lanka",
+                    "addressCountry": "LK"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": selectedHotel.latitude,
+                    "longitude": selectedHotel.longitude
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": selectedHotel.rating,
+                    "reviewCount": 12
+                  }
+                })
+              }}
+            />
+
             <motion.div
               id="modal-hotel-body"
               className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 md:p-8 text-slate-800 dark:text-slate-200"
@@ -3634,6 +3695,38 @@ export default function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* Dynamic SEO JSON-LD Schema Markup injection for Restaurant */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FoodEstablishment",
+                  "@id": `https://izysl.com/restaurant/${selectedRestaurant.id}`,
+                  "name": selectedRestaurant.name,
+                  "description": selectedRestaurant.description,
+                  "image": selectedRestaurant.imageUrl,
+                  "priceRange": selectedRestaurant.priceRange,
+                  "servesCuisine": selectedRestaurant.cuisine,
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": selectedRestaurant.location || "Sri Lanka",
+                    "addressCountry": "LK"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": selectedRestaurant.latitude,
+                    "longitude": selectedRestaurant.longitude
+                  },
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": selectedRestaurant.rating,
+                    "reviewCount": 8
+                  }
+                })
+              }}
+            />
+
             <motion.div
               id="modal-res-body"
               className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 md:p-8 text-slate-800 dark:text-slate-200"

@@ -923,6 +923,92 @@ app.get("/api/tips", async (req, res) => {
   res.json([...TRAVEL_TIPS, ...dynamicTips]);
 });
 
+function serveDynamicSeoPage(req: express.Request, res: express.Response) {
+  try {
+    const distPath = path.join(process.cwd(), "dist");
+    let indexPath = path.join(distPath, "index.html");
+    if (!fs.existsSync(indexPath)) {
+      indexPath = path.join(process.cwd(), "index.html");
+    }
+
+    if (!fs.existsSync(indexPath)) {
+      return res.status(404).send("index.html not found");
+    }
+
+    let html = fs.readFileSync(indexPath, "utf-8");
+
+    // Default details
+    let title = "IZYSL.COM | Premium Luxury Sri Lanka Travel Guide & Planner";
+    let description = "Official luxury travel guide of Sri Lanka. Interactive province filters, beautiful cascading waterfalls, pristine surf beaches, Ella train journeys, and mountain budget routes.";
+    let imageUrl = "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&h=630&q=80";
+
+    const urlPath = req.path;
+    if (urlPath.startsWith("/blog/")) {
+      const id = urlPath.split("/")[2];
+      const dynamicBlogs = getDynamicBlogs();
+      const additionalPhotos = getAdditionalPhotos();
+      const blog = [...BLOG_ARTICLES, ...dynamicBlogs].find(b => b.id === id);
+      if (blog) {
+        title = `${blog.title} - Nomad Chronicles | IZYSL.COM`;
+        description = blog.excerpt || blog.firstParagraph || description;
+        const extraPhotos = additionalPhotos[blog.id] || [];
+        imageUrl = blog.imageUrl || extraPhotos[0] || imageUrl;
+      }
+    } else if (urlPath.startsWith("/place/")) {
+      const id = urlPath.split("/")[2];
+      const place = PLACES_DATA.find(p => p.id === id);
+      if (place) {
+        title = `${place.name} - Sri Lanka Travel Guide | IZYSL.COM`;
+        description = place.description || description;
+        imageUrl = place.imageUrl || place.imageUrls?.[0] || imageUrl;
+      }
+    } else if (urlPath.startsWith("/hotel/")) {
+      const id = urlPath.split("/")[2];
+      const hotel = HOTELS_DATA.find(h => h.id === id);
+      if (hotel) {
+        title = `${hotel.name} - Luxury Hotel | IZYSL.COM`;
+        description = hotel.description || description;
+        imageUrl = hotel.imageUrl || imageUrl;
+      }
+    } else if (urlPath.startsWith("/restaurant/")) {
+      const id = urlPath.split("/")[2];
+      const restaurant = RESTAURANTS_DATA.find(r => r.id === id);
+      if (restaurant) {
+        title = `${restaurant.name} - Dining Guide | IZYSL.COM`;
+        description = restaurant.description || description;
+        imageUrl = restaurant.imageUrl || imageUrl;
+      }
+    }
+
+    // Clean html replacements
+    html = html.replace(/<title>.*?<\/title>/gi, `<title>${title}</title>`);
+    html = html.replace(/<meta name="description" content=".*?"\s*\/?>/gi, `<meta name="description" content="${description}" />`);
+    html = html.replace(/<meta property="og:title" content=".*?"\s*\/?>/gi, `<meta property="og:title" content="${title}" />`);
+    html = html.replace(/<meta property="og:description" content=".*?"\s*\/?>/gi, `<meta property="og:description" content="${description}" />`);
+    html = html.replace(/<meta property="og:image" content=".*?"\s*\/?>/gi, `<meta property="og:image" content="${imageUrl}" />`);
+    html = html.replace(/<meta name="twitter:title" content=".*?"\s*\/?>/gi, `<meta name="twitter:title" content="${title}" />`);
+    html = html.replace(/<meta name="twitter:description" content=".*?"\s*\/?>/gi, `<meta name="twitter:description" content="${description}" />`);
+    html = html.replace(/<meta name="twitter:image" content=".*?"\s*\/?>/gi, `<meta name="twitter:image" content="${imageUrl}" />`);
+
+    const canonicalUrl = `https://izysl.com${urlPath}`;
+    html = html.replace(/<link rel="canonical" href=".*?"\s*\/?>/gi, `<link rel="canonical" href="${canonicalUrl}" />`);
+
+    res.header("Content-Type", "text/html");
+    res.send(html);
+  } catch (err) {
+    console.error("Error serving dynamic SEO page:", err);
+    const distPath = path.join(process.cwd(), "dist");
+    let indexPath = path.join(distPath, "index.html");
+    if (!fs.existsSync(indexPath)) {
+      indexPath = path.join(process.cwd(), "index.html");
+    }
+    res.sendFile(indexPath);
+  }
+}
+
+// Bind express routes for crawler/entity page pre-rendering
+app.get(["/blog/:id", "/place/:id", "/hotel/:id", "/restaurant/:id"], serveDynamicSeoPage);
+
 // Serve dynamic sitemap.xml
 app.get("/sitemap.xml", (req, res) => {
   try {
