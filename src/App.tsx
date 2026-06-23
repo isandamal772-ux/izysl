@@ -159,12 +159,6 @@ function getClientFallbackDailyBlog(): any {
       title: "Horton Plains National Park: Hikes & Baker's Falls",
       excerpt: "Explore the misty plains, dramatic cliffs at World's End, and the cascading waters of Baker's Falls.",
       category: "Nature",
-      imageUrl: "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=800&q=80",
-      imageUrls: [
-        "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&h=500&q=80",
-        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&h=500&q=80"
-      ],
       firstParagraph: "Horton Plains National Park in Sri Lanka is a cold, windy forest landscape sitting over 2,100 meters above sea level. This UNESCO World Heritage site offers some of the country's most dramatic views, including the sheer drop of World's End and the misty flow of Baker's Falls.",
       tableOfContents: [
         { id: "worlds-end", label: "The Majestic World's End Hike" },
@@ -187,12 +181,6 @@ function getClientFallbackDailyBlog(): any {
       title: "Ahangama Surf Guide: Best Wave Breaks & Beach Cafes",
       excerpt: "Discover the emerging surf capital of the south coast, filled with stilt villas, cool cafes, and consistent waves.",
       category: "Adventure",
-      imageUrl: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=800&q=80",
-      imageUrls: [
-        "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&h=500&q=80",
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&h=500&q=80"
-      ],
       firstParagraph: "Ahangama has quickly transformed from a sleepy fishing village into one of Sri Lanka's trendiest coastal hubs. Renowned for its reliable reef breaks, sandy beaches, and artisanal coffee spots, it is the ultimate base for surfers and remote nomads alike.",
       tableOfContents: [
         { id: "surfing", label: "Surfing in Ahangama for All Levels" },
@@ -215,12 +203,6 @@ function getClientFallbackDailyBlog(): any {
       title: "Ancient City of Anuradhapura: Sacred Bodhi Tree & Stupas",
       excerpt: "Step back 2000 years into Sri Lanka's first capital, home to colossal stupas and ruins of ancient Buddhist monasteries.",
       category: "Culture",
-      imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
-      imageUrls: [
-        "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?auto=format&fit=crop&w=800&h=500&q=80",
-        "https://images.unsplash.com/photo-1580635553747-1c5eac66ff90?auto=format&fit=crop&w=800&h=500&q=80"
-      ],
       firstParagraph: "Anuradhapura is the spiritual cradle of ancient Sri Lanka, serving as the country's first royal capital for over a millennium. Today, this vast archaeological reserve holds some of the world's largest brick stupas, sacred ruins, and ancient irrigation tanks.",
       tableOfContents: [
         { id: "monuments", label: "Gigantic Stupas & Royal Architecture" },
@@ -255,8 +237,8 @@ function getClientFallbackDailyBlog(): any {
     author: "IZYSL Guide Bot",
     date: dateStr,
     category: topic.category,
-    imageUrl: topic.imageUrl,
-    imageUrls: topic.imageUrls,
+    imageUrl: (topic as any).imageUrl,
+    imageUrls: (topic as any).imageUrls,
     readTime: "6 min read",
     firstParagraph: topic.firstParagraph,
     tableOfContents: topic.tableOfContents,
@@ -1788,7 +1770,7 @@ export default function App() {
                   {blogArticles.map((art) => (
                     <article key={art.id} id={`blog-card-${art.id}`} className="chronicle-card bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between group">
                       <div>
-                        {art.imageUrl && (
+                        {art.imageUrl ? (
                           <div 
                             onClick={() => setSelectedBlog(art)}
                             className="relative h-[200px] w-full overflow-hidden cursor-pointer"
@@ -1804,6 +1786,12 @@ export default function App() {
                                 {art.category}
                               </span>
                             </div>
+                          </div>
+                        ) : (
+                          <div className="pt-5 px-5">
+                            <span className="bg-emerald-650/10 text-emerald-650 dark:bg-emerald-500/10 dark:text-emerald-450 font-mono text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                              {art.category}
+                            </span>
                           </div>
                         )}
                         <div className="p-5">
@@ -3783,18 +3771,24 @@ export default function App() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 30 }}
             >
-              {/* Cover Banner (With Photo) */}
-              <div className="relative w-full h-[280px] md:h-[350px] overflow-hidden rounded-t-3xl border-b border-slate-205 dark:border-slate-800">
+              {/* Cover Banner (With Photo or Slate Gradient) */}
+              <div className="relative w-full h-[280px] md:h-[350px] overflow-hidden rounded-t-3xl border-b border-slate-200 dark:border-slate-800 bg-slate-900">
                 <div className="absolute inset-0 z-0">
-                  <ShimmerImage
-                    src={selectedBlog.imageUrl || selectedBlog.imageUrls?.[0] || "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&h=630&q=80"}
-                    alt={selectedBlog.title}
-                    className="w-full h-full object-cover"
-                    height="350px"
-                    loading="eager"
-                  />
-                  {/* Gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-black/30" />
+                  {selectedBlog.imageUrl ? (
+                    <>
+                      <ShimmerImage
+                        src={selectedBlog.imageUrl}
+                        alt={selectedBlog.title}
+                        className="w-full h-full object-cover"
+                        height="350px"
+                        loading="eager"
+                      />
+                      {/* Gradient overlay for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-black/30" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950" />
+                  )}
                 </div>
 
                 {/* Content Overlay */}
@@ -3806,7 +3800,7 @@ export default function App() {
                     <button
                       id="btn-close-blog-modal"
                       onClick={() => setSelectedBlog(null)}
-                      className="w-[36px] h-[36px] p-0 flex items-center justify-center rounded-full backdrop-blur-md bg-black/45 border border-white/20 hover:scale-110 active:scale-95 transition-all cursor-pointer text-white hover:bg-black/60 shadow-lg"
+                      className="w-[36px] h-[36px] p-0 flex items-center justify-center rounded-full backdrop-blur-md bg-black/45 border border-white/20 hover:scale-110 active:scale-95 transition-all cursor-pointer z-10 text-white hover:bg-black/60 shadow-lg"
                     >
                       <X className="w-[20px] h-[20px]" />
                     </button>
@@ -3938,11 +3932,15 @@ export default function App() {
 
                               // Successfully saved! Let's update state
                               const uploadedUrl = data.photoUrl;
+                              const currentUrls = selectedBlog.imageUrls || [];
+                              const newUrls = [...currentUrls, uploadedUrl];
+                              const newImageUrl = selectedBlog.imageUrl || uploadedUrl;
                               
                               // Update selectedBlog
                               const updatedBlog = {
                                 ...selectedBlog,
-                                imageUrls: [...(selectedBlog.imageUrls || [selectedBlog.imageUrl]), uploadedUrl]
+                                imageUrl: newImageUrl,
+                                imageUrls: newUrls
                               };
                               setSelectedBlog(updatedBlog);
 
@@ -3954,9 +3952,14 @@ export default function App() {
                               console.warn("Upload service failed. Using local sandbox fallback:", err);
                               
                               // Local fallback
+                              const currentUrls = selectedBlog.imageUrls || [];
+                              const newUrls = [...currentUrls, base64String];
+                              const newImageUrl = selectedBlog.imageUrl || base64String;
+
                               const updatedBlog = {
                                 ...selectedBlog,
-                                imageUrls: [...(selectedBlog.imageUrls || [selectedBlog.imageUrl]), base64String]
+                                imageUrl: newImageUrl,
+                                imageUrls: newUrls
                               };
                               setSelectedBlog(updatedBlog);
                               setBlogArticles(prev => prev.map(art => art.id === selectedBlog.id ? updatedBlog : art));

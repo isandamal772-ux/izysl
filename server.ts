@@ -906,6 +906,7 @@ app.get("/api/blogs", async (req, res) => {
       });
       return {
         ...blog,
+        imageUrl: blog.imageUrl || mergedUrls[0],
         imageUrls: mergedUrls
       };
     }
