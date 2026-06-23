@@ -3873,27 +3873,103 @@ export default function App() {
                   {selectedBlog.firstParagraph}
                 </p>
 
-                {/* Inline Gallery Block (Image 2 and 3 side-by-side) */}
-                {selectedBlog.imageUrls && selectedBlog.imageUrls.length >= 3 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
-                    <div className="relative group overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                      <ShimmerImage
-                        src={selectedBlog.imageUrls[1]}
-                        alt={`${selectedBlog.title} - view 2`}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        height="200px"
-                      />
-                    </div>
-                    <div className="relative group overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                      <ShimmerImage
-                        src={selectedBlog.imageUrls[2]}
-                        alt={`${selectedBlog.title} - view 3`}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        height="200px"
-                      />
-                    </div>
+                {/* Inline Gallery Block (All images starting from index 1) */}
+                {selectedBlog.imageUrls && selectedBlog.imageUrls.length > 1 && (
+                  <div className={`grid grid-cols-1 ${selectedBlog.imageUrls.length === 2 ? 'sm:grid-cols-1' : selectedBlog.imageUrls.length === 3 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 md:grid-cols-3'} gap-4 my-6`}>
+                    {selectedBlog.imageUrls.slice(1).map((imgUrl: string, imgIdx: number) => (
+                      <div key={imgIdx} className="relative group overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <ShimmerImage
+                          src={imgUrl}
+                          alt={`${selectedBlog.title} - view ${imgIdx + 2}`}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                          height="200px"
+                        />
+                      </div>
+                    ))}
                   </div>
                 )}
+
+                {/* Upload Photo section */}
+                <div className="bg-slate-50 dark:bg-slate-950/40 border border-dashed border-slate-300 dark:border-slate-800 rounded-2xl p-5 text-center space-y-3 my-6">
+                  <div className="flex flex-col items-center space-y-1">
+                    <span className="text-xl">📸</span>
+                    <h4 className="font-bold text-xs text-slate-800 dark:text-slate-200">Have photos of this destination?</h4>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400">Share your travel moments with the community. Max size 2MB.</p>
+                  </div>
+                  <div className="flex justify-center">
+                    <label className="bg-emerald-600 hover:bg-emerald-500 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white text-xs font-bold font-sans px-4 py-2 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-1.5">
+                      <span>📤 Upload Photo</span>
+                      <input 
+                        type="file" 
+                        accept="image/*" 
+                        className="hidden" 
+                        onChange={async (e) => {
+                          const file = e.target.files?.[0];
+                          if (!file) return;
+
+                          // Validate size (2MB)
+                          if (file.size > 2 * 1024 * 1024) {
+                            triggerToast("Security Check Failed: Uploaded image exceeds the maximal 2MB limit.", "error");
+                            return;
+                          }
+
+                          // Read file as base64
+                          const reader = new FileReader();
+                          reader.onload = async () => {
+                            const base64String = reader.result as string;
+                            triggerToast("Uploading photo...", "info");
+
+                            try {
+                              const response = await fetch(`/api/blogs/${selectedBlog.id}/add-photo`, {
+                                method: "POST",
+                                headers: {
+                                  "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                  image: base64String,
+                                  filename: file.name
+                                })
+                              });
+
+                              const data = await response.json();
+                              if (!response.ok) {
+                                throw new Error(data.error || "Server validation error from upload channel.");
+                              }
+
+                              // Successfully saved! Let's update state
+                              const uploadedUrl = data.photoUrl;
+                              
+                              // Update selectedBlog
+                              const updatedBlog = {
+                                ...selectedBlog,
+                                imageUrls: [...(selectedBlog.imageUrls || [selectedBlog.imageUrl]), uploadedUrl]
+                              };
+                              setSelectedBlog(updatedBlog);
+
+                              // Update blogArticles list
+                              setBlogArticles(prev => prev.map(art => art.id === selectedBlog.id ? updatedBlog : art));
+
+                              triggerToast("Photo uploaded successfully! It is now visible in the article gallery.", "success");
+                            } catch (err: any) {
+                              console.warn("Upload service failed. Using local sandbox fallback:", err);
+                              
+                              // Local fallback
+                              const updatedBlog = {
+                                ...selectedBlog,
+                                imageUrls: [...(selectedBlog.imageUrls || [selectedBlog.imageUrl]), base64String]
+                              };
+                              setSelectedBlog(updatedBlog);
+                              setBlogArticles(prev => prev.map(art => art.id === selectedBlog.id ? updatedBlog : art));
+                              
+                              triggerToast("Photo added locally! It will display for this session.", "success");
+                            }
+                          };
+                          reader.readAsDataURL(file);
+                        }}
+                      />
+                    </label>
+                  </div>
+                </div>
 
                 {/* 4. SECTIONS (H2, H3, paragraphs, click-to-tweets) */}
                 <div className="space-y-5 text-slate-700 dark:text-slate-300">

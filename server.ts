@@ -68,6 +68,34 @@ function saveDynamicBlogs(blogs: any[]) {
   }
 }
 
+// Path to store additional blog photos uploaded by users
+const bundleAdditionalPhotosPath = path.join(process.cwd(), "src", "data", "additionalPhotos.json");
+const additionalPhotosPath = process.env.VERCEL === "1"
+  ? path.join("/tmp", "additionalPhotos.json")
+  : bundleAdditionalPhotosPath;
+
+function getAdditionalPhotos(): Record<string, string[]> {
+  try {
+    if (fs.existsSync(additionalPhotosPath)) {
+      return JSON.parse(fs.readFileSync(additionalPhotosPath, "utf-8"));
+    }
+    if (process.env.VERCEL === "1" && fs.existsSync(bundleAdditionalPhotosPath)) {
+      return JSON.parse(fs.readFileSync(bundleAdditionalPhotosPath, "utf-8"));
+    }
+  } catch (e) {
+    console.error("Error reading additional photos:", e);
+  }
+  return {};
+}
+
+function saveAdditionalPhotos(photos: Record<string, string[]>) {
+  try {
+    fs.writeFileSync(additionalPhotosPath, JSON.stringify(photos, null, 2), "utf-8");
+  } catch (e) {
+    console.error("Error writing additional photos:", e);
+  }
+}
+
 const top20Places = [
   "hr-sigiriya", // Sigiriya Rock
   "hr-kandy", // Temple of the Tooth
@@ -743,6 +771,77 @@ app.post("/api/comments/upload", (req, res) => {
   }
 });
 
+// Server-side blog photo upload endpoint with size and mime-type security guards
+app.post("/api/blogs/:id/add-photo", (req, res) => {
+  try {
+    const { id } = req.params;
+    const { image, filename } = req.body;
+    if (!image || !filename) {
+      return res.status(400).json({ error: "Missing image file payload parameters." });
+    }
+
+    // Extract details from Base64 Data URL
+    const matches = image.match(/^data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+);base64,(.+)$/);
+    if (!matches || matches.length !== 3) {
+      return res.status(400).json({ error: "Invalid photo format structure." });
+    }
+
+    const mimeType = matches[1];
+    const base64Data = matches[2];
+
+    // Mime-type Security Guard
+    const allowedMimeTypes = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
+    if (!allowedMimeTypes.includes(mimeType.toLowerCase())) {
+      return res.status(400).json({ 
+        error: "Security Check Failed: Only JPG, JPEG, PNG, and WebP media formats are allowed on our servers." 
+      });
+    }
+
+    // File Size limit validation (2MB)
+    const buffer = Buffer.from(base64Data, "base64");
+    const maxSizeBytes = 2 * 1024 * 1024; // 2MB
+    if (buffer.length > maxSizeBytes) {
+      return res.status(400).json({ 
+        error: "Security Check Failed: Uploaded image exceeds the maximal 2MB limit." 
+      });
+    }
+
+    // Map mimeType to clean secure extension
+    let extension = "png";
+    if (mimeType.includes("jpeg") || mimeType.includes("jpg")) {
+      extension = "jpg";
+    } else if (mimeType.includes("webp")) {
+      extension = "webp";
+    }
+
+    // Generate randomized collision-safe filename
+    const randomId = Math.random().toString(36).substring(2, 10) + "_" + Date.now();
+    const safeFilename = `blog_${id}_${randomId}.${extension}`;
+    const destinationPath = path.join(uploadsDir, safeFilename);
+
+    // Write parsed buffer to disk
+    fs.writeFileSync(destinationPath, buffer);
+    const photoUrl = `/uploads/comments/${safeFilename}`; // Serve using comments static uploads
+
+    // Save to additional photos
+    const additionalPhotos = getAdditionalPhotos();
+    if (!additionalPhotos[id]) {
+      additionalPhotos[id] = [];
+    }
+    additionalPhotos[id].push(photoUrl);
+    saveAdditionalPhotos(additionalPhotos);
+
+    return res.json({
+      success: true,
+      photoUrl,
+      filename: safeFilename
+    });
+  } catch (err: any) {
+    console.error("Critical server-side blog photo upload error:", err);
+    return res.status(500).json({ error: "Internal Server Error during file write procedures." });
+  }
+});
+
 // AI Travel Assistant endpoint
 app.post("/api/chat", async (req, res) => {
   try {
@@ -794,7 +893,26 @@ app.post("/api/chat", async (req, res) => {
 app.get("/api/blogs", async (req, res) => {
   await ensureDailyBlogGenerated();
   const dynamicBlogs = getDynamicBlogs();
-  res.json([...BLOG_ARTICLES, ...dynamicBlogs]);
+  const additionalPhotos = getAdditionalPhotos();
+  
+  const allBlogs = [...BLOG_ARTICLES, ...dynamicBlogs].map((blog: any) => {
+    const extraUrls = additionalPhotos[blog.id] || [];
+    if (extraUrls.length > 0) {
+      const mergedUrls = [...(blog.imageUrls || (blog.imageUrl ? [blog.imageUrl] : []))];
+      extraUrls.forEach((url: string) => {
+        if (!mergedUrls.includes(url)) {
+          mergedUrls.push(url);
+        }
+      });
+      return {
+        ...blog,
+        imageUrls: mergedUrls
+      };
+    }
+    return blog;
+  });
+  
+  res.json(allBlogs);
 });
 
 // Serve dynamic travel tips merged with static ones
