@@ -2992,6 +2992,11 @@ export const BLOGS_DATA = [
     author: "Elena Petrova",
     date: "June 2026",
     imageUrl: "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageUrls: [
+      "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&h=630&q=80",
+      "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?auto=format&fit=crop&w=800&h=500&q=80",
+      "https://images.unsplash.com/photo-1625736319842-8c871eb74b3d?auto=format&fit=crop&w=800&h=500&q=80"
+    ],
     category: "Train Journey",
     firstParagraph: "I spent only $2.80 (890 LKR) to book a second-class reserved seat for the iconic Sri Lankan blue train journey. Everyone told me I needed a $45 luxury private charter tour, but they were completely wrong. In 2026, the local train remains the absolute best and most majestic way to view high mountain tea plantations, cascading waterfalls, and misty peaks on a budget.",
     tableOfContents: [
@@ -3077,6 +3082,11 @@ export const BLOGS_DATA = [
     author: "Elena Petrova",
     date: "June 2026",
     imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageUrls: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&h=630&q=80",
+      "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&h=500&q=80",
+      "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800&h=500&q=80"
+    ],
     category: "Beaches",
     firstParagraph: "I spent only $24 a day beach-hopping across southern Sri Lanka for 12 days. Everyone told me a tropical beach vacation required a $200 daily budget, but that is simply a myth. In 2026, the southern coast is packed with local beach bed shacks, secret ocean pools, and cheap surf camps that make luxury beach travel incredibly affordable for any backpacker.",
     tableOfContents: [
@@ -3133,6 +3143,11 @@ export const BLOGS_DATA = [
     author: "Rajitha Silva",
     date: "June 2026",
     imageUrl: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageUrls: [
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&h=630&q=80",
+      "https://images.unsplash.com/photo-1568051243851-f9b136146e97?auto=format&fit=crop&w=800&h=500&q=80",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&h=500&q=80"
+    ],
     category: "Local Transport",
     firstParagraph: "I spent only $5 to travel 160 kilometers on the Southern Expressway AC bus. Everyone said I should hire a private car for $110, but utilizing public transit saved me thousands. In 2026, navigating Sri Lanka's transport networks is smooth and extremely cheap if you use the right app-based tuk-tuks and express lines.",
     tableOfContents: [
@@ -3180,7 +3195,12 @@ export const BLOGS_DATA = [
     excerpt: "How to hike to Sri Lanka's second tallest waterfall, explore secret upper pools, and find natural stone slides.",
     author: "Liam Harrison",
     date: "June 2026",
-    imageUrl: "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageUrls: [
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&h=630&q=80",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&h=500&q=80",
+      "https://images.unsplash.com/photo-1508459855340-fb63ac591728?auto=format&fit=crop&w=800&h=500&q=80"
+    ],
     category: "Waterfalls",
     firstParagraph: "I paid exactly $0 to swim on the edge of a 220-meter vertical drop at Diyaluma Falls. Local tour sharks tried to charge me $45 for a basic hiking guide, but I found the secret mountain trail on my own for free. Here is the safest way to trek the cliffs of Upper Diyaluma and swim in wild natural stone pools in 2026.",
     tableOfContents: [
@@ -3223,6 +3243,11 @@ export const BLOGS_DATA = [
     author: "Sophia Sterling",
     date: "May 2026",
     imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&h=630&q=80",
+    imageUrls: [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&h=630&q=80",
+      "https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&w=800&h=500&q=80",
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&h=500&q=80"
+    ],
     category: "Luxury",
     firstParagraph: "I paid only $60 for a private 4x4 safari jeep with a professional driver in Yala. Hotel booking agents quoted me $150 for the exact same tour, but going direct saved me more than 50% of the cost. Here is how to book your leopard-spotting safari in Yala National Park and find high-end glamping on a realistic traveler budget.",
     tableOfContents: [
