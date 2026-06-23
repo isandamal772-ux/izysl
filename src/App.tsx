@@ -322,6 +322,9 @@ function getClientFallbackDailyTip(todayStr: string): any {
 export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [currentUser, setCurrentUser] = useState<any>(null);
+  const [cookieConsent, setCookieConsent] = useState<string | null>(() => {
+    return localStorage.getItem("izysl_cookie_consent");
+  });
   const [selectedCategory, setSelectedCategory] = useState<DestinationCategory | "ALL" | "HOTELS" | "RESTAURANTS">("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
@@ -675,6 +678,18 @@ export default function App() {
     
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute("content", description);
+
+    // Track pageview in Google Analytics if active and accepted
+    if (typeof (window as any).gtag === "function") {
+      const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID || "G-S0BC2G18DP";
+      if (gaId) {
+        let pagePath = window.location.pathname;
+        (window as any).gtag("config", gaId, {
+          page_title: title,
+          page_path: pagePath
+        });
+      }
+    }
   }, [activeTab, selectedPlace, selectedHotel, selectedRestaurant, selectedBlog]);
 
   // Fetch dynamic daily blog posts from Express server
@@ -725,6 +740,32 @@ export default function App() {
         setTravelTips([...TRAVEL_TIPS, clientDailyTip]);
       });
   }, []);
+
+  // Dynamically load Google Analytics if VITE_GA_MEASUREMENT_ID is configured and user accepted cookies
+  useEffect(() => {
+    const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID || "G-S0BC2G18DP";
+    if (cookieConsent === "accepted" && gaId && gaId !== "YOUR_GA_MEASUREMENT_ID" && gaId.trim() !== "") {
+      // Prevent double script loading
+      if (document.getElementById("google-analytics-script")) return;
+
+      // 1. Inject gtag script tag
+      const script = document.createElement("script");
+      script.id = "google-analytics-script";
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      document.head.appendChild(script);
+
+      // 2. Initialize dataLayer and gtag handler
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).gtag = function() {
+        (window as any).dataLayer.push(arguments);
+      };
+      (window as any).gtag("js", new Date());
+      (window as any).gtag("config", gaId);
+
+      console.log("Google Analytics initialized dynamically with ID:", gaId);
+    }
+  }, [cookieConsent]);
 
   // Auth operations
   const handleSignIn = async () => {
@@ -4214,6 +4255,50 @@ export default function App() {
           <span className="text-[9px] font-semibold tracking-wide">Directory</span>
         </button>
       </div>
+
+      {/* Cookie Consent Banner */}
+      <AnimatePresence>
+        {cookieConsent === null && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 30, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50 bg-slate-900/95 dark:bg-slate-950/95 border border-slate-700/60 dark:border-slate-800/80 p-5 rounded-2xl shadow-2xl backdrop-blur-md text-white space-y-4"
+          >
+            <div className="space-y-1.5">
+              <h4 className="text-sm font-sans font-bold flex items-center gap-1.5">
+                🍪 Cookie & Privacy Consent
+              </h4>
+              <p className="text-[11px] text-slate-350 leading-relaxed font-sans">
+                We use cookies and Google Analytics to measure visitor traffic, analyze regional patterns, and optimize the travel experience. By clicking "Accept all", you agree to our privacy settings.
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => {
+                  localStorage.setItem("izysl_cookie_consent", "accepted");
+                  setCookieConsent("accepted");
+                  triggerToast("Thank you! Google Analytics tracking enabled.", "success");
+                }}
+                className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-sans text-xs font-bold py-2.5 rounded-xl shadow cursor-pointer text-center transition-colors"
+              >
+                Accept all
+              </button>
+              <button
+                onClick={() => {
+                  localStorage.setItem("izysl_cookie_consent", "declined");
+                  setCookieConsent("declined");
+                  triggerToast("Cookies declined. Analytics tracking disabled.", "info");
+                }}
+                className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-sans text-xs font-semibold py-2.5 rounded-xl border border-slate-700 cursor-pointer text-center transition-colors"
+              >
+                Decline
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
