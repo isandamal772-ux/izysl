@@ -529,9 +529,9 @@ function getTargetTipForDate(dateStr: string) {
 }
 
 async function ensureDailyTipGenerated() {
+  const dynamicTips = getDynamicTips();
   try {
     const todayStr = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
-    const dynamicTips = getDynamicTips();
 
     // Check if we already have a generated tip for today
     const hasTodayTip = dynamicTips.some((tip: any) => tip.dateCode === todayStr);
@@ -1068,7 +1068,7 @@ async function initDevOrProdServer() {
     return;
   }
 
-  const PORT = process.env.PORT || 3000;
+  const PORT = parseInt(process.env.PORT || "3000", 10);
 
   // Serve frontend assets
   if (process.env.NODE_ENV !== "production") {
