@@ -1075,11 +1075,6 @@ app.get("/sitemap.xml", (req, res) => {
       xml += `  <url>\n    <loc>https://izysl.com/place/${place.id}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
     }
     
-    // Hotels
-    for (const hotel of HOTELS_DATA) {
-      xml += `  <url>\n    <loc>https://izysl.com/hotel/${hotel.id}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
-    }
-    
     // Restaurants
     for (const rest of RESTAURANTS_DATA) {
       xml += `  <url>\n    <loc>https://izysl.com/restaurant/${rest.id}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
