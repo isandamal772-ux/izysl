@@ -2473,10 +2473,10 @@ export default function App() {
             <div className="space-y-3">
               <span className="font-black text-[10px] text-slate-350 uppercase tracking-widest block">Follow Paradise</span>
               <ul className="space-y-1.5 text-slate-300 list-none pl-0">
+                <li><a href="https://youtube.com/@izyslexplorer" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB703] transition-colors">YouTube Channel</a></li>
+                <li><a href="https://www.tiktok.com/@izysl.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB703] transition-colors">TikTok Feed</a></li>
                 <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB703] transition-colors">Instagram Feed</a></li>
-                <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB703] transition-colors">YouTube Drone Reels</a></li>
                 <li><a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB703] transition-colors">Pinterest Moodboards</a></li>
-                <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB703] transition-colors">Travel Community Group</a></li>
               </ul>
             </div>
           </div>
