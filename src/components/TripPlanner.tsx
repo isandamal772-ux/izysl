@@ -261,6 +261,19 @@ export default function TripPlanner() {
         <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xl mx-auto">
           Explore all 140+ real locations from our complete travel directory. Our advanced routing engines auto-sequence your selections by province to prevent highway backtracking.
         </p>
+        <div className="mt-4 flex items-center justify-center">
+          <a
+            href="https://wa.me/94778677803?text=Hi!%20I'm%20using%2520the%2520IZYSL%2520Planner%20and%20would%20like%20to%20get%20help%20planning%20a%20custom%20trip."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white text-xs font-semibold px-4.5 py-2.5 rounded-full shadow-md hover:shadow-emerald-500/10 transition-all transform hover:scale-103 cursor-pointer"
+          >
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.1 1.448 4.7 1.449 5.483 0 9.944-4.461 9.947-9.948.002-2.657-1.03-5.155-2.903-7.03C16.516 1.74 14.02 1.7 11.1 12.003c-2.659-.001-5.155 1.03-7.025 2.905-1.874 1.875-2.904 4.373-2.906 7.03-.004 5.486 4.456 9.95 9.942 9.95zm-2.016-11.13c-.11-.2-.42-.31-.88-.54-.46-.23-2.72-1.34-3.14-1.49-.42-.15-.73-.23-.98.15-.26.38-1 .99-1.22 1.22-.23.23-.46.26-.92.03-.46-.23-1.95-.72-3.71-2.29-1.37-1.22-2.29-2.73-2.56-3.19-.27-.46-.03-.71.2-.94.21-.21.46-.54.69-.81.23-.27.31-.46.46-.77.15-.31.08-.57-.04-.8-.11-.23-.98-2.36-1.34-3.23-.35-.85-.71-.74-.98-.75-.25-.01-.54-.01-.84-.01-.3 0-.79.11-1.2.56-.41.45-1.58 1.54-1.58 3.76s1.62 4.36 1.85 4.67c.23.31 3.2 4.88 7.74 6.84 1.08.47 1.92.75 2.58.96.99.31 1.9.27 2.62.16.8-.12 2.72-1.11 3.1-2.19.38-1.07.38-2 .27-2.19-.11-.2-.42-.3-.88-.53z" />
+            </svg>
+            Need a custom tour plan? Talk to us on WhatsApp
+          </a>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -604,11 +617,22 @@ export default function TripPlanner() {
               </div>
 
               {/* PDF Print Layer */}
-              <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-850 flex justify-end">
+              <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-850 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <a
+                  href={`https://wa.me/94778677803?text=Hi!%20I%20have%20planned%20a%20trip%20titled%20"${encodeURIComponent(generatedPlan.title)}"%20using%20your%20Trip%20Planner%20and%20would%20like%20to%20discuss%20it.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold font-sans text-xs px-5 py-3 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer transform hover:scale-103"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.1 1.448 4.7 1.449 5.483 0 9.944-4.461 9.947-9.948.002-2.657-1.03-5.155-2.903-7.03C16.516 1.74 14.02 1.7 11.1 12.003c-2.659-.001-5.155 1.03-7.025 2.905-1.874 1.875-2.904 4.373-2.906 7.03-.004 5.486 4.456 9.95 9.942 9.95zm-2.016-11.13c-.11-.2-.42-.31-.88-.54-.46-.23-2.72-1.34-3.14-1.49-.42-.15-.73-.23-.98.15-.26.38-1 .99-1.22 1.22-.23.23-.46.26-.92.03-.46-.23-1.95-.72-3.71-2.29-1.37-1.22-2.29-2.73-2.56-3.19-.27-.46-.03-.71.2-.94.21-.21.46-.54.69-.81.23-.27.31-.46.46-.77.15-.31.08-.57-.04-.8-.11-.23-.98-2.36-1.34-3.23-.35-.85-.71-.74-.98-.75-.25-.01-.54-.01-.84-.01-.3 0-.79.11-1.2.56-.41.45-1.58 1.54-1.58 3.76s1.62 4.36 1.85 4.67c.23.31 3.2 4.88 7.74 6.84 1.08.47 1.92.75 2.58.96.99.31 1.9.27 2.62.16.8-.12 2.72-1.11 3.1-2.19.38-1.07.38-2 .27-2.19-.11-.2-.42-.3-.88-.53z" />
+                  </svg>
+                  Book / Discuss Trip on WhatsApp
+                </a>
                 <button
                   id="btn-print-itinerary"
                   onClick={() => window.print()}
-                  className="bg-slate-900 hover:bg-slate-850 dark:bg-slate-800 dark:hover:bg-slate-750 text-white font-semibold font-sans text-xs px-5 py-3 rounded-xl flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                  className="w-full sm:w-auto bg-slate-900 hover:bg-slate-850 dark:bg-slate-800 dark:hover:bg-slate-750 text-white font-semibold font-sans text-xs px-5 py-3 rounded-xl flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer"
                 >
                   <FileText className="w-4 h-4" /> Open Print Layout (PDF)
                 </button>

@@ -4435,7 +4435,7 @@ export default function App() {
       {/* Floating WhatsApp contact button bottom-right */}
       <a
         id="whatsapp-floating-button"
-        href="https://wa.me/94771234567?text=Hi!%2520I'm%252520using%2520IZYSL.COM%2520and%2520would%2520like%2520some%2520travel%2520assistance."
+        href="https://wa.me/94778677803?text=Hi!%2520I'm%2520using%2520IZYSL.COM%2520and%2520would%2520like%2520some%2520travel%2520assistance%2520with%2520trip%2520planning."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-24 right-6 z-40 bg-[#25D366] hover:bg-[#128C7E] text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-115 flex items-center justify-center cursor-pointer group hover:shadow-emerald-500/20"
@@ -4445,7 +4445,7 @@ export default function App() {
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.1 1.448 4.7 1.449 5.483 0 9.944-4.461 9.947-9.948.002-2.657-1.03-5.155-2.903-7.03C16.516 1.74 14.02 1.7 11.1 12.003c-2.659-.001-5.155 1.03-7.025 2.905-1.874 1.875-2.904 4.373-2.906 7.03-.004 5.486 4.456 9.95 9.942 9.95zm-2.016-11.13c-.11-.2-.42-.31-.88-.54-.46-.23-2.72-1.34-3.14-1.49-.42-.15-.73-.23-.98.15-.26.38-1 .99-1.22 1.22-.23.23-.46.26-.92.03-.46-.23-1.95-.72-3.71-2.29-1.37-1.22-2.29-2.73-2.56-3.19-.27-.46-.03-.71.2-.94.21-.21.46-.54.69-.81.23-.27.31-.46.46-.77.15-.31.08-.57-.04-.8-.11-.23-.98-2.36-1.34-3.23-.35-.85-.71-.74-.98-.75-.25-.01-.54-.01-.84-.01-.3 0-.79.11-1.2.56-.41.45-1.58 1.54-1.58 3.76s1.62 4.36 1.85 4.67c.23.31 3.2 4.88 7.74 6.84 1.08.47 1.92.75 2.58.96.99.31 1.9.27 2.62.16.8-.12 2.72-1.11 3.1-2.19.38-1.07.38-2 .27-2.19-.11-.2-.42-.3-.88-.53z" />
         </svg>
         <span className="absolute right-14 bg-slate-900 dark:bg-slate-950 text-white text-[10.5px] font-sans font-medium px-2.5 py-1.5 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap border border-slate-700/50">
-          Chat with our Sri Lanka Expert 💬
+          Plan your trip on WhatsApp 💬
         </span>
       </a>
       {/* Mobile Bottom Navigation Bar */}
