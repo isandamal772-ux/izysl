@@ -3,6 +3,13 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.ts" },
     { "source": "/sitemap.xml", "destination": "/api/index.ts" },
+    { "source": "/explore", "destination": "/api/index.ts" },
+    { "source": "/planner", "destination": "/api/index.ts" },
+    { "source": "/tips", "destination": "/api/index.ts" },
+    { "source": "/blog", "destination": "/api/index.ts" },
+    { "source": "/reviews", "destination": "/api/index.ts" },
+    { "source": "/emergency", "destination": "/api/index.ts" },
+    { "source": "/map", "destination": "/api/index.ts" },
     { "source": "/blog/(.*)", "destination": "/api/index.ts" },
     { "source": "/place/(.*)", "destination": "/api/index.ts" },
     { "source": "/hotel/(.*)", "destination": "/api/index.ts" },

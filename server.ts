@@ -943,7 +943,28 @@ function serveDynamicSeoPage(req: express.Request, res: express.Response) {
     let imageUrl = "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&h=630&q=80";
 
     const urlPath = req.path;
-    if (urlPath.startsWith("/blog/")) {
+    if (urlPath === "/explore") {
+      title = "Explore Sri Lanka: Waterfalls, Pristine Beaches & Safaris | IZYSL.COM";
+      description = "Discover the ultimate tourist attractions in Sri Lanka. Interactive search and filters for waterfalls, beaches, heritage temples, and safari national parks.";
+    } else if (urlPath === "/planner") {
+      title = "Interactive Sri Lanka Trip Planner & Route Builder | IZYSL.COM";
+      description = "Plan your dream vacation to Sri Lanka. Add tourist spots, estimate total stay costs, coordinate chauffeur transport, and export your itinerary.";
+    } else if (urlPath === "/tips") {
+      title = "Sri Lanka Travel Tips, eVisa ETA & Local Etiquette | IZYSL.COM";
+      description = "Essential travel guidelines for Sri Lanka. Learn about visa requirements (ETA), local tipping customs, packing guides, and health advice.";
+    } else if (urlPath === "/blog") {
+      title = "Nomad Chronicles: Sri Lanka Travel Blog & Articles | IZYSL.COM";
+      description = "Read insightful travel stories, detailed destination guides, and food recommendations written by local experts.";
+    } else if (urlPath === "/reviews") {
+      title = "Real Visitor Photos & Local Reviews of Sri Lanka | IZYSL.COM";
+      description = "Check real photos and comments uploaded by tourists visiting Sigiriya, Ella, Mirissa, and Yala national parks.";
+    } else if (urlPath === "/emergency") {
+      title = "Emergency Contacts & Practical Directory - Sri Lanka | IZYSL.COM";
+      description = "Access active hotlines for Tourist Police, emergency medical services, local taxi dispatchers, and breakdown support.";
+    } else if (urlPath === "/map") {
+      title = "Interactive Travel Map of Sri Lanka - Location Pinboard | IZYSL.COM";
+      description = "Locate all top 140+ tourist attractions geographically. Filter by beaches, waterfalls, temples, and hiking routes.";
+    } else if (urlPath.startsWith("/blog/")) {
       const id = urlPath.split("/")[2];
       const dynamicBlogs = getDynamicBlogs();
       const additionalPhotos = getAdditionalPhotos();
@@ -1007,7 +1028,19 @@ function serveDynamicSeoPage(req: express.Request, res: express.Response) {
 }
 
 // Bind express routes for crawler/entity page pre-rendering
-app.get(["/blog/:id", "/place/:id", "/hotel/:id", "/restaurant/:id"], serveDynamicSeoPage);
+app.get([
+  "/explore",
+  "/planner",
+  "/tips",
+  "/blog",
+  "/reviews",
+  "/emergency",
+  "/map",
+  "/blog/:id",
+  "/place/:id",
+  "/hotel/:id",
+  "/restaurant/:id"
+], serveDynamicSeoPage);
 
 // Serve dynamic sitemap.xml
 app.get("/sitemap.xml", (req, res) => {
