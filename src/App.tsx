@@ -331,6 +331,7 @@ export default function App() {
   const [activeModalTab, setActiveModalTab] = useState<"overview" | "reach" | "tips">("overview");
   const [blogArticles, setBlogArticles] = useState<any[]>(BLOG_ARTICLES.map(normalizeBlog));
   const [travelTips, setTravelTips] = useState<any[]>(TRAVEL_TIPS);
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
   // Hero Background Slideshow State
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -1748,6 +1749,117 @@ export default function App() {
                 >
                   Airport Directions on Maps <ExternalLink className="w-3.5 h-3.5" />
                 </a>
+              </div>
+            </div>
+
+            {/* -------------------- INTERNATIONAL TRAVELER TOOLKIT -------------------- */}
+            <div className="bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 rounded-3xl p-6 md:p-8 shadow-sm space-y-6">
+              <div>
+                <span className="text-emerald-600 dark:text-emerald-400 font-semibold font-mono tracking-widest uppercase text-[10px]">Essential Utilities</span>
+                <h3 className="text-xl md:text-2xl font-sans font-bold text-slate-900 dark:text-white mt-1">
+                  International Traveler Prep Toolkit 🇱🇰
+                </h3>
+                <p className="text-slate-500 dark:text-slate-400 text-xs mt-1.5 leading-relaxed font-sans">
+                  Interactive checklist, connectivity guides, and residency hacks to prepare foreign visitors for an optimal experience in Sri Lanka.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                {/* Left: Interactive Checklist */}
+                <div className="lg:col-span-6 bg-slate-50 dark:bg-[#0b0f19]/70 border border-slate-200/40 dark:border-slate-850/60 p-6 rounded-2xl">
+                  <h4 className="text-sm font-sans font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5 mb-4">
+                    📝 Smart Packing Checklist
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      { id: "repellent", label: "High-DEET Mosquito Repellent", desc: "Essential for Dengue prevention during sunrise and sunset." },
+                      { id: "adapter", label: "Universal Type G & D Plug Adapter", desc: "Adapts your devices to Sri Lanka's mixed round/rectangular outlets." },
+                      { id: "clothing", label: "Light, Modest Clothes (White/Light)", desc: "Must cover shoulders and knees for temple visits." },
+                      { id: "footwear", label: "Waterproof Hiking Shoes", desc: "Sturdy grip is crucial for Knuckles Forest or Ella Rock." },
+                      { id: "drybag", label: "Waterproof Dry Bag", desc: "Keeps cameras and electronics safe near waterfall streams." },
+                      { id: "meds", label: "Stomach Meds & Rehydration Salts", desc: "Helpful for adapting to spicy local cuisine and street food." }
+                    ].map((item) => (
+                      <label
+                        key={item.id}
+                        className={`flex items-start gap-3 p-3 rounded-xl border transition-all cursor-pointer select-none group ${
+                          checkedItems[item.id]
+                            ? "bg-emerald-500/5 border-emerald-500/30 dark:bg-emerald-500/10 dark:border-emerald-500/20"
+                            : "border-slate-200/30 dark:border-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800/40"
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={!!checkedItems[item.id]}
+                          onChange={() => setCheckedItems(prev => ({ ...prev, [item.id]: !prev[item.id] }))}
+                          className="mt-1 accent-emerald-500 rounded border-slate-300 dark:border-slate-700 w-4 h-4 cursor-pointer"
+                        />
+                        <div className="flex flex-col">
+                          <span className={`text-xs font-semibold transition-colors ${checkedItems[item.id] ? "text-emerald-600 dark:text-emerald-400" : "text-slate-850 dark:text-slate-250 group-hover:text-emerald-500"}`}>
+                            {item.label}
+                          </span>
+                          <span className="text-[10px] text-slate-400 mt-0.5 leading-relaxed font-sans">
+                            {item.desc}
+                          </span>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right: Local Hacks & Quick Help */}
+                <div className="lg:col-span-6 space-y-4">
+                  <h4 className="text-sm font-sans font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    💡 Resident Hacks & Local Guidelines
+                  </h4>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="p-4 bg-emerald-50/20 dark:bg-emerald-950/10 border border-emerald-500/10 rounded-2xl">
+                      <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 block mb-1">📱 SIM & eSIM Setup</span>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-350 leading-relaxed font-sans">
+                        Buy a Dialog or Mobitel tourist eSIM at CMB Airport arrivals. Typically costs ~10 USD for 30GB data, valid for 30 days. Dialog has the strongest coverage in hills.
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-amber-50/20 dark:bg-amber-950/10 border border-amber-500/10 rounded-2xl">
+                      <span className="text-xs font-bold text-amber-600 dark:text-amber-400 block mb-1">💵 Cash & Payments</span>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-350 leading-relaxed font-sans">
+                        ATMs are common in cities (Commercial Bank / Sampath Bank support Visa/Mastercard). Local shops, tuk-tuks, and food stalls ONLY accept LKR cash.
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-blue-50/20 dark:bg-blue-950/10 border border-blue-500/10 rounded-2xl">
+                      <span className="text-xs font-bold text-blue-600 dark:text-blue-400 block mb-1">🔌 Socket Standards</span>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-350 leading-relaxed font-sans">
+                        Outlets are G-type (British 3-pin) and D/M type (round 3-pin). Use the pen-trick (press the top grounding pin to open lower shutters) if using round pins.
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-indigo-50/20 dark:bg-indigo-950/10 border border-indigo-500/10 rounded-2xl">
+                      <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-1">🌦️ Monsoon Splitting</span>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-350 leading-relaxed font-sans">
+                        Nov to Apr: Go to South & West coast beaches (Weligama, Hikkaduwa). May to Sep: Go to East coast (Arugam Bay, Trincomalee) for sunny surf breaks.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* PickMe download & TukTuk support widget */}
+                  <div className="p-4 bg-slate-50 dark:bg-[#0b0f19]/70 border border-slate-200/40 dark:border-slate-850/60 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex-1 text-left">
+                      <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">🛺 Ride-Hailing App Tip</span>
+                      <p className="text-[10px] text-slate-550 dark:text-slate-400 leading-relaxed mt-1 font-sans">
+                        Avoid random street-side negotiations. Use **PickMe** or **Uber** on your smartphone to request metered tuk-tuks, cars, or vans at fixed transparent prices.
+                      </p>
+                    </div>
+                    <a
+                      href="https://pickme.lk/passenger"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-emerald-600 hover:bg-emerald-500 text-white font-sans text-xs font-bold px-4 py-2.5 rounded-xl shadow cursor-pointer text-center whitespace-nowrap transition-colors w-full sm:w-auto"
+                    >
+                      Download PickMe
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
