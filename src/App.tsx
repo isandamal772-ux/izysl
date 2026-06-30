@@ -143,6 +143,7 @@ function normalizeBlog(blog: any): any {
 
   return {
     ...blog,
+    dateCode: blog.dateCode || (blog.id === "bl-train" ? "2026-06-22" : blog.id === "bl-beaches" ? "2026-06-23" : blog.id === "bl-transport" ? "2026-06-24" : blog.id === "bl-waterfalls" ? "2026-06-25" : blog.id === "bl-luxury" ? "2026-06-26" : "2026-06-22"),
     firstParagraph,
     tableOfContents: tableOfContents.length > 0 ? tableOfContents : undefined,
     sections,
@@ -3821,8 +3822,8 @@ export default function App() {
                       "headline": selectedBlog.title,
                       "description": selectedBlog.excerpt,
                       "image": [selectedBlog.imageUrl],
-                      "datePublished": "2026-06-15T08:00:00+05:30",
-                      "dateModified": "2026-06-15T10:30:00+05:30",
+                      "datePublished": selectedBlog.dateCode ? `${selectedBlog.dateCode}T08:00:00+05:30` : "2026-06-15T08:00:00+05:30",
+                      "dateModified": selectedBlog.dateCode ? `${selectedBlog.dateCode}T10:30:00+05:30` : "2026-06-15T10:30:00+05:30",
                       "author": {
                         "@type": "Person",
                         "name": selectedBlog.author

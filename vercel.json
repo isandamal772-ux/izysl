@@ -3,6 +3,7 @@
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.ts" },
     { "source": "/sitemap.xml", "destination": "/api/index.ts" },
+    { "source": "/", "destination": "/api/index.ts" },
     { "source": "/explore", "destination": "/api/index.ts" },
     { "source": "/planner", "destination": "/api/index.ts" },
     { "source": "/tips", "destination": "/api/index.ts" },

@@ -23,7 +23,10 @@ xml += `  <url>\n    <loc>https://izysl.com/</loc>\n    <lastmod>${todayStr}</la
 // Navigation Sections (clean paths)
 const sections = ["explore", "planner", "tips", "blog", "reviews", "emergency", "map"];
 for (const sec of sections) {
-  xml += `  <url>\n    <loc>https://izysl.com/${sec}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
+  const isDaily = sec === "blog" || sec === "tips";
+  const freq = isDaily ? "daily" : "weekly";
+  const prio = isDaily ? "0.95" : "0.9";
+  xml += `  <url>\n    <loc>https://izysl.com/${sec}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>\n`;
 }
 
 // Static Blogs

@@ -1014,6 +1014,49 @@ function serveDynamicSeoPage(req: express.Request, res: express.Response) {
     const canonicalUrl = `https://izysl.com${urlPath}`;
     html = html.replace(/<link rel="canonical" href=".*?"\s*\/?>/gi, `<link rel="canonical" href="${canonicalUrl}" />`);
 
+    // Dynamic date modification injection for Google Search bot
+    const isoToday = new Date().toISOString();
+    html = html.replace("DATE_MODIFIED_PLACEHOLDER", isoToday);
+
+    // Dynamic schema markup injection for blogs
+    if (urlPath.startsWith("/blog/")) {
+      const id = urlPath.split("/")[2];
+      const dynamicBlogs = getDynamicBlogs();
+      const blog = [...BLOG_ARTICLES, ...dynamicBlogs].find(b => b.id === id);
+      if (blog) {
+        const publishDate = blog.dateCode ? `${blog.dateCode}T08:00:00+05:30` : "2026-06-15T08:00:00+05:30";
+        const modifiedDate = blog.dateCode ? `${blog.dateCode}T10:30:00+05:30` : "2026-06-15T10:30:00+05:30";
+        const articleSchema = {
+          "@context": "https://schema.org",
+          "@type": "TravelArticle",
+          "@id": `https://izysl.com/blog/${blog.id}#article`,
+          "headline": blog.title,
+          "description": blog.excerpt,
+          "image": [blog.imageUrl],
+          "datePublished": publishDate,
+          "dateModified": modifiedDate,
+          "author": {
+            "@type": "Person",
+            "name": blog.author || "IZYSL Nomad"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "IZYSL.COM | Premium Luxury Sri Lanka Travel Guide",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://izysl.com/logo.png"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://izysl.com/blog/${blog.id}`
+          }
+        };
+        const schemaScript = `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`;
+        html = html.replace("</head>", `${schemaScript}\n</head>`);
+      }
+    }
+
     res.header("Content-Type", "text/html");
     res.send(html);
   } catch (err) {
@@ -1029,6 +1072,7 @@ function serveDynamicSeoPage(req: express.Request, res: express.Response) {
 
 // Bind express routes for crawler/entity page pre-rendering
 app.get([
+  "/",
   "/explore",
   "/planner",
   "/tips",
@@ -1057,7 +1101,10 @@ app.get("/sitemap.xml", (req, res) => {
     // Navigation Sections (clean paths instead of hashes)
     const sections = ["explore", "planner", "tips", "blog", "reviews", "emergency", "map"];
     for (const sec of sections) {
-      xml += `  <url>\n    <loc>https://izysl.com/${sec}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
+      const isDaily = sec === "blog" || sec === "tips";
+      const freq = isDaily ? "daily" : "weekly";
+      const prio = isDaily ? "0.95" : "0.9";
+      xml += `  <url>\n    <loc>https://izysl.com/${sec}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>\n`;
     }
     
     // Static Blogs
