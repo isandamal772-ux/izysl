@@ -2070,28 +2070,104 @@ export default function App() {
                     </a>
                   </div>
                 </div>
+
+                {/* Local Survival Phrasebook with Live Audio Synthesis */}
+                <div className="pt-6 border-t border-slate-100 dark:border-slate-850">
+                  <h3 className="font-sans font-bold text-base text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-1.5">
+                    🗣️ Local Survival Phrasebook (Sinhala Audio)
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+                    Struggling with local language barriers? Tap any phrase below to hear it spoken aloud in Sinhala so you can communicate instantly with local merchants or drivers.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    {[
+                      { english: "How much is this?", local: "Meka keeyada?", sinhala: "මේක කීයද?" },
+                      { english: "Where is the station?", local: "Station eka koheda?", sinhala: "ස්ටේෂන් එක කොහෙද?" },
+                      { english: "Thank you very much.", local: "Bohoma sthuthi.", sinhala: "බොහොම ස්තූතියි." },
+                      { english: "Go straight.", local: "Kelinnama yanna.", sinhala: "කෙලින්ම යන්න." },
+                      { english: "Help me, please.", local: "Mata udau karanna.", sinhala: "මට උදව් කරන්න." },
+                      { english: "Do you speak English?", local: "Ingrisi puluwanda?", sinhala: "ඉංග්‍රීසි පුළුවන්ද?" }
+                    ].map((phrase, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          if ('speechSynthesis' in window) {
+                            window.speechSynthesis.cancel();
+                            const utterance = new SpeechSynthesisUtterance(phrase.sinhala);
+                            utterance.lang = "si-LK";
+                            utterance.rate = 0.8;
+                            window.speechSynthesis.speak(utterance);
+                            triggerToast(`Pronouncing: "${phrase.local}"`, "success");
+                          } else {
+                            triggerToast("Audio Speech not supported on this browser.", "info");
+                          }
+                        }}
+                        className="flex items-center justify-between p-3.5 bg-slate-50 dark:bg-[#0b0f19]/70 border border-slate-150 dark:border-slate-800/80 rounded-2xl hover:border-emerald-500/40 dark:hover:border-emerald-500/30 transition-all text-left cursor-pointer group"
+                      >
+                        <div>
+                          <span className="text-[10.5px] font-sans font-bold text-slate-800 dark:text-slate-200 block group-hover:text-emerald-500 transition-colors">
+                            {phrase.english}
+                          </span>
+                          <span className="text-[9.5px] text-slate-400 mt-0.5 block font-mono">
+                            "{phrase.local}"
+                          </span>
+                        </div>
+                        <span className="p-2 bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-xl group-hover:bg-emerald-500 group-hover:text-white transition-all text-xs font-bold font-sans">
+                          🔊 Speak
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Mobile Button to slide up Inquiry Sheet */}
-              <div className="lg:hidden pt-4">
-                <button
-                  onClick={() => setIsFeedbackSheetOpen(true)}
-                  className="w-full bg-[#FFB703] text-slate-950 font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 hover:brightness-105 transition-all text-xs cursor-pointer"
-                >
-                  <Mail className="w-4 h-4" /> Open Inquiry Form Bottom Sheet
-                </button>
-              </div>
+              {/* Right Sidebar Column */}
+              <div className="lg:col-span-4 space-y-6 w-full">
+                {/* Live Safety Advisories */}
+                <div className="bg-red-500/5 dark:bg-red-500/10 border border-red-500/20 rounded-3xl p-5 space-y-4">
+                  <h4 className="text-sm font-sans font-bold text-red-600 dark:text-red-400 flex items-center gap-1.5">
+                    ⚠️ Live Travel Safety & Flags
+                  </h4>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-normal font-sans">
+                    Active safety alerts and ocean flags provided by local guides and maritime departments:
+                  </p>
+                  <div className="space-y-3 text-[10px]">
+                    <div className="flex gap-2">
+                      <span className="text-red-500 font-bold font-sans shrink-0">🔴 Southern Beaches:</span>
+                      <p className="text-slate-600 dark:text-slate-350 leading-relaxed font-sans">High rip current warning in Weligama & Hikkaduwa. Check red flag warnings before entry.</p>
+                    </div>
+                    <div className="flex gap-2 pt-2.5 border-t border-slate-100 dark:border-slate-800">
+                      <span className="text-amber-500 font-bold font-sans shrink-0">🟡 Central Highlands:</span>
+                      <p className="text-slate-600 dark:text-slate-350 leading-relaxed font-sans">Slippery trails near Ella Rock & waterfalls. Please wear waterproof hiking boots.</p>
+                    </div>
+                    <div className="flex gap-2 pt-2.5 border-t border-slate-100 dark:border-slate-800">
+                      <span className="text-emerald-500 font-bold font-sans shrink-0">🟢 Cultural Triangle:</span>
+                      <p className="text-slate-600 dark:text-slate-350 leading-relaxed font-sans">Sigiriya and Polonnaruwa historical parks are dry and fully open. Modest codes apply.</p>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Sidebar / Mobile Bottom Sheet for Inquiry Form */}
-              <div className={`${isFeedbackSheetOpen ? "fixed inset-0 z-50 flex items-end justify-center bg-slate-950/75 backdrop-blur-sm p-0 m-0" : "hidden lg:block lg:col-span-4"}`}>
-                <div 
-                  className={`${
-                    isFeedbackSheetOpen 
-                      ? "bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-6 rounded-t-3xl shadow-2xl w-full max-h-[85vh] overflow-y-auto animate-fadeIn" 
-                      : "bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 p-6 rounded-3xl shadow-sm"
-                  }`}
-                  onClick={(e) => e.stopPropagation()}
-                >
+                {/* Mobile Button to slide up Inquiry Sheet */}
+                <div className="lg:hidden">
+                  <button
+                    onClick={() => setIsFeedbackSheetOpen(true)}
+                    className="w-full bg-[#FFB703] text-slate-950 font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 hover:brightness-105 transition-all text-xs cursor-pointer"
+                  >
+                    <Mail className="w-4 h-4" /> Open Inquiry Form Bottom Sheet
+                  </button>
+                </div>
+
+                {/* Sidebar / Mobile Bottom Sheet for Inquiry Form */}
+                <div className={`${isFeedbackSheetOpen ? "fixed inset-0 z-50 flex items-end justify-center bg-slate-950/75 backdrop-blur-sm p-0 m-0" : "hidden lg:block"}`}>
+                  <div 
+                    className={`${
+                      isFeedbackSheetOpen 
+                        ? "bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-6 rounded-t-3xl shadow-2xl w-full max-h-[85vh] overflow-y-auto animate-fadeIn" 
+                        : "bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 p-6 rounded-3xl shadow-sm"
+                    }`}
+                    onClick={(e) => e.stopPropagation()}
+                  >
                   {isFeedbackSheetOpen && (
                     <div className="flex justify-between items-center pb-3 mb-4 border-b border-slate-100 dark:border-slate-800 animate-fadeIn">
                       <span className="font-sans font-bold text-xs uppercase tracking-widest text-slate-400">Emergency Inquiry</span>
@@ -2173,7 +2249,8 @@ export default function App() {
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
         {/* -------------------- TAB 6: ISLAND REVIEWS & GALLERY -------------------- */}
         {activeTab === "reviews" && (
