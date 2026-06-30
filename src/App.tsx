@@ -1198,7 +1198,7 @@ export default function App() {
           id="hero-interactive" 
           className="relative w-full h-[520px] md:h-[650px] overflow-hidden flex items-center justify-center p-4 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${heroSlides[0]})`,
+            backgroundImage: `url(${heroSlides[0].replace("w=1920", "w=800")})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -1209,6 +1209,8 @@ export default function App() {
               <img
                 key={idx}
                 src={slide}
+                srcSet={`${slide.replace("w=1920", "w=640")} 640w, ${slide.replace("w=1920", "w=1080")} 1080w, ${slide} 1920w`}
+                sizes="(max-width: 640px) 640px, (max-width: 1080px) 1080px, 1920px"
                 alt="Scenic Sri Lanka Background"
                 loading={idx === 0 ? "eager" : "lazy"}
                 fetchPriority={idx === 0 ? "high" : "low"}
