@@ -101,6 +101,107 @@ function getTargetPlaceForDate(dateStr: string, offset: number = 0) {
   return place || PLACES_DATA.find((p) => p.id === "hr-sigiriya") || PLACES_DATA[0];
 }
 
+function getDeterministicBlogsForDateRange(): any[] {
+  const startDate = new Date("2026-06-22");
+  const today = new Date();
+  const diffTime = Math.abs(today.getTime() - startDate.getTime());
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const blogs: any[] = [];
+  const daysToGenerate = Math.min(60, diffDays);
+  
+  for (let i = 0; i <= daysToGenerate; i++) {
+    const targetDate = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
+    const dateStr = targetDate.toISOString().split("T")[0];
+    
+    for (let offset = 0; offset < 3; offset++) {
+      const place = getTargetPlaceForDate(dateStr, offset);
+      const guide = generate1000WordGuide(place);
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const formattedDate = `${months[targetDate.getMonth()]} ${targetDate.getDate()}, ${targetDate.getFullYear()}`;
+      
+      const tableOfContents = [
+        { id: "intro-history", label: "Introduction & History" },
+        { id: "location-reach", label: "How to Reach" },
+        { id: "weather-timing", label: "Best Time & Weather" },
+        { id: "fees-hours", label: "Entry Fees & Hours" },
+        { id: "activities", label: "Top Things to Do" },
+        { id: "nearby", label: "Nearby Attractions" },
+        { id: "safety", label: "Safety Guidelines" }
+      ];
+      
+      const sections = [
+        { type: "h2", text: "Introduction & Historical Context", id: "intro-history" },
+        { type: "paragraph", text: guide.historyAndLegend },
+        { type: "tweet", text: `Exploring the breathtaking history of ${place.name} in Sri Lanka! An absolute must-visit destination. #SriLanka #TravelGuide`, tweetText: `Exploring the breathtaking history of ${place.name} in Sri Lanka! 🇱🇰` },
+        { type: "h2", text: "How to Get There & Location Details", id: "location-reach" },
+        { type: "paragraph", text: guide.locationAndReach },
+        { type: "h2", text: "Best Time to Visit & Weather Conditions", id: "weather-timing" },
+        { type: "paragraph", text: guide.bestTimeAndWeather },
+        { type: "h2", text: "Entry Fees, Tickets, and Opening Hours", id: "fees-hours" },
+        { type: "paragraph", text: guide.feesAndTimings },
+        { type: "h2", text: "Top Things to Do & Activities", id: "activities" },
+        { type: "paragraph", text: guide.thingsToDo },
+        { type: "h2", text: "Nearby Attractions to Explore", id: "nearby" },
+        { type: "paragraph", text: guide.nearbyAttractions },
+        { type: "h2", text: "Crucial Safety Guidelines & Local Regulations", id: "safety" },
+        { type: "paragraph", text: guide.safetyTips }
+      ];
+      
+      const cat = place.category === "mountains_hill_country" ? "Adventure" : place.category === "heritage_sites" ? "Culture" : "Nature";
+      const selectedFaqs = [
+        { question: `What is the best time to visit ${place.name}?`, answer: place.bestTime || "December to April is highly recommended." },
+        { question: `Is there an entrance fee for ${place.name}?`, answer: place.entranceFee || "Entry details can vary; please check with the park gates." }
+      ];
+      
+      const newBlog = {
+        id: `bl-dynamic-fallback-${place.id}-${dateStr}-${offset}`,
+        title: `${place.name}: The Ultimate ~1000-Word Explorer Guide`,
+        excerpt: place.description,
+        author: "IZYSL Guide Bot",
+        date: formattedDate,
+        category: cat,
+        imageUrl: place.imageUrls[0] || "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80",
+        readTime: "8 min read",
+        firstParagraph: `Welcome to the comprehensive explorer's guide to ${place.name}, one of the most stunning destinations in ${place.location}, Sri Lanka. In this detailed travel article, we'll cover everything you need to know before visiting.`,
+        tableOfContents,
+        sections,
+        faqs: selectedFaqs,
+        relatedPosts: ["bl-train", "bl-beaches"],
+        dateCode: dateStr,
+        offset
+      };
+      
+      blogs.push(newBlog);
+    }
+  }
+  
+  return blogs.reverse();
+}
+
+function getDeterministicTipsForDateRange(): any[] {
+  const startDate = new Date("2026-06-22");
+  const today = new Date();
+  const diffTime = Math.abs(today.getTime() - startDate.getTime());
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const tips: any[] = [];
+  const daysToGenerate = Math.min(60, diffDays);
+  
+  for (let i = 0; i <= daysToGenerate; i++) {
+    const targetDate = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
+    const dateStr = targetDate.toISOString().split("T")[0];
+    const fallbackTip = getTargetTipForDate(dateStr);
+    
+    tips.push({
+      id: `tip-dynamic-${dateStr}-${i}`,
+      title: fallbackTip.title,
+      content: fallbackTip.content,
+      dateCode: dateStr
+    });
+  }
+  
+  return tips.reverse();
+}
+
 // Fallback logic for dynamic daily blog generation when GEMINI_API_KEY is missing
 // It programmatically compiles a detailed ~1000-word guide from the template system
 function generateFallbackDailyBlog(todayStr: string, offset: number = 0) {
@@ -794,23 +895,21 @@ app.post("/api/chat", async (req, res) => {
 });
 
 // Serve dynamic blog articles merged with static ones
-app.get("/api/blogs", async (req, res) => {
-  await ensureDailyBlogGenerated();
-  const dynamicBlogs = getDynamicBlogs();
+app.get("/api/blogs", (req, res) => {
+  const dynamicBlogs = getDeterministicBlogsForDateRange();
   res.json([...BLOG_ARTICLES, ...dynamicBlogs]);
 });
 
 // Serve dynamic travel tips merged with static ones
-app.get("/api/tips", async (req, res) => {
-  await ensureDailyTipGenerated();
-  const dynamicTips = getDynamicTips();
+app.get("/api/tips", (req, res) => {
+  const dynamicTips = getDeterministicTipsForDateRange();
   res.json([...TRAVEL_TIPS, ...dynamicTips]);
 });
 
 // Serve dynamic sitemap.xml
 app.get("/sitemap.xml", (req, res) => {
   try {
-    const dynamicBlogs = getDynamicBlogs();
+    const dynamicBlogs = getDeterministicBlogsForDateRange();
     const todayStr = new Date().toISOString().split("T")[0];
     
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
