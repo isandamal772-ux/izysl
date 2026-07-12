@@ -91,11 +91,11 @@ const top20Places = [
   "wf-diyaluma" // Diyaluma Ella
 ];
 
-function getTargetPlaceForDate(dateStr: string) {
+function getTargetPlaceForDate(dateStr: string, offset: number = 0) {
   const startDate = new Date("2026-06-22").getTime(); // Reference epoch
   const currentDate = new Date(dateStr).getTime();
   const diffDays = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
-  const dayIndex = Math.max(0, diffDays) % 20;
+  const dayIndex = (Math.max(0, diffDays) * 3 + offset) % top20Places.length;
   const targetPlaceId = top20Places[dayIndex];
   const place = PLACES_DATA.find((p) => p.id === targetPlaceId);
   return place || PLACES_DATA.find((p) => p.id === "hr-sigiriya") || PLACES_DATA[0];
@@ -103,9 +103,9 @@ function getTargetPlaceForDate(dateStr: string) {
 
 // Fallback logic for dynamic daily blog generation when GEMINI_API_KEY is missing
 // It programmatically compiles a detailed ~1000-word guide from the template system
-function generateFallbackDailyBlog(todayStr: string) {
+function generateFallbackDailyBlog(todayStr: string, offset: number = 0) {
   const dynamicBlogs = getDynamicBlogs();
-  const place = getTargetPlaceForDate(todayStr);
+  const place = getTargetPlaceForDate(todayStr, offset);
   const guide = generate1000WordGuide(place);
 
   const sections = [
@@ -205,7 +205,7 @@ function generateFallbackDailyBlog(todayStr: string) {
   const dateStr = `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
 
   const newBlog = {
-    id: `bl-dynamic-fallback-${place.id}-${Date.now()}`,
+    id: `bl-dynamic-fallback-${place.id}-${Date.now()}-${offset}`,
     title: `${place.name}: The Ultimate ~1000-Word Explorer Guide`,
     excerpt: place.description,
     author: "IZYSL Guide Bot",
@@ -218,12 +218,13 @@ function generateFallbackDailyBlog(todayStr: string) {
     sections,
     faqs,
     relatedPosts: ["bl-train", "bl-beaches"],
-    dateCode: todayStr
+    dateCode: todayStr,
+    offset
   };
 
   dynamicBlogs.push(newBlog);
   saveDynamicBlogs(dynamicBlogs);
-  console.log(`Saved new fallback daily blog: ${newBlog.title}`);
+  console.log(`Saved new fallback daily blog (offset ${offset}): ${newBlog.title}`);
 }
 
 function parseMarkdownToBlogFields(blog: any): any {
@@ -329,103 +330,105 @@ function parseMarkdownToBlogFields(blog: any): any {
 }
 
 // Function to generate daily blog post if not exists
-// Function to generate daily blog post if not exists
 async function ensureDailyBlogGenerated() {
-  try {
-    const todayStr = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
-    const dynamicBlogs = getDynamicBlogs();
-    
-    // Check if we already have a blog for today
-    const hasTodayBlog = dynamicBlogs.some((blog: any) => blog.dateCode === todayStr);
-    if (hasTodayBlog) return;
+  const todayStr = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+  const apiKey = process.env.GEMINI_API_KEY;
 
-    console.log(`Generating daily SEO blog post for ${todayStr}...`);
-    
-    // Get Gemini client
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      console.warn("No GEMINI_API_KEY configured. Using fallback dynamic blog generator.");
-      generateFallbackDailyBlog(todayStr);
-      return;
-    }
-    
-    const ai = new GoogleGenAI({ apiKey });
-    
-    // Pick the place corresponding to the day index
-    const targetPlace = getTargetPlaceForDate(todayStr);
-    
-    const prompt = 
-      `Write a high-quality, engaging, extremely detailed, and SEO-optimized travel guide article about '${targetPlace.name}' in Sri Lanka. ` +
-      `Focus on keywords like 'best time to visit ${targetPlace.name}', 'things to do in ${targetPlace.name}', 'how to reach ${targetPlace.name}', and local travel safety guidelines. ` +
-      `The total word count of the article MUST be approximately 1000 words. Make the descriptions rich and comprehensive. ` +
-      `Response format MUST be a valid JSON object matching the following fields: ` +
-      `{\n` +
-      `  "id": "bl-dynamic-${Date.now()}",\n` +
-      `  "title": "A catchy SEO-friendly title",\n` +
-      `  "excerpt": "A short 1-2 sentence preview excerpt",\n` +
-      `  "author": "IZYSL Travel Guide",\n` +
-      `  "date": "formatted date string e.g. June 22, 2026",\n` +
-      `  "category": "Adventure / Culture / Nature",\n` +
-      `  "imageUrl": "Choose a relevant unsplash photo URL for this location or category",\n` +
-      `  "readTime": "8 min read",\n` +
-      `  "firstParagraph": "Engaging, long introduction paragraph",\n` +
-      `  "tableOfContents": [\n` +
-      `    { "id": "history", "label": "History & Legend" },\n` +
-      `    { "id": "reach", "label": "How to Reach" },\n` +
-      `    { "id": "weather", "label": "Best Time & Weather" },\n` +
-      `    { "id": "activities", "label": "Things to Do" },\n` +
-      `    { "id": "safety", "label": "Safety Tips" }\n` +
-      `  ],\n` +
-      `  "sections": [\n` +
-      `    { "type": "h2", "text": "History & Legend", "id": "history" },\n` +
-      `    { "type": "paragraph", "text": "Very long, detailed paragraph detailing the history, mythology, and cultural background of the site." },\n` +
-      `    { "type": "tweet", "text": "Catchy tweet quote about the location", "tweetText": "Catchy tweet about the location #SriLanka" },\n` +
-      `    { "type": "h2", "text": "How to Reach", "id": "reach" },\n` +
-      `    { "type": "paragraph", "text": "Detailed instructions on how to reach this place from Kandy, Colombo, or Ella, including public transport, trains, or hiring private drivers." },\n` +
-      `    { "type": "h2", "text": "Best Time & Weather", "id": "weather" },\n` +
-      `    { "type": "paragraph", "text": "Detailed description of weather patterns, monsoon seasons, temperature, and when to plan your hike or beach trip." },\n` +
-      `    { "type": "h2", "text": "Things to Do", "id": "activities" },\n` +
-      `    { "type": "paragraph", "text": "A comprehensive list of activities, viewpoints, photo guides, photography tips, and nearby exploration landmarks." },\n` +
-      `    { "type": "h2", "text": "Safety Tips", "id": "safety" },\n` +
-      `    { "type": "paragraph", "text": "Crucial guidelines regarding currents, slippery rocks, local dress codes at temples, guides, and packing essentials." }\n` +
-      `  ],\n` +
-      `  "faqs": [\n` +
-      `    { "question": "Question 1?", "answer": "Answer 1" },\n` +
-      `    { "question": "Question 2?", "answer": "Answer 2" }\n` +
-      `  ]\n` +
-      `}\n` +
-      `Return ONLY the JSON. No markdown wrappers.`;
-
-    const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
-        temperature: 0.8
-      }
-    });
-
-    const text = response.text;
-    if (text) {
-      let newBlog = JSON.parse(text);
-      newBlog = parseMarkdownToBlogFields(newBlog);
-      newBlog.dateCode = todayStr; // tag it with today's date
+  for (let offset = 0; offset < 3; offset++) {
+    try {
+      const dynamicBlogs = getDynamicBlogs();
       
-      // Fallback imageUrl if Gemini doesn't provide a valid one
-      if (!newBlog.imageUrl || !newBlog.imageUrl.startsWith("http")) {
-        newBlog.imageUrl = targetPlace.imageUrls[0] || "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80";
-      }
+      // Check if we already have a blog for today and offset
+      const hasTodayBlog = dynamicBlogs.some((blog: any) => blog.dateCode === todayStr && blog.offset === offset);
+      if (hasTodayBlog) continue;
 
-      dynamicBlogs.push(newBlog);
-      saveDynamicBlogs(dynamicBlogs);
-      console.log(`Successfully generated and saved new daily blog: ${newBlog.title}`);
-    } else {
-      throw new Error("Empty model response");
+      console.log(`Generating daily SEO blog post for ${todayStr} (offset ${offset})...`);
+      
+      // Pick the place corresponding to the day index and offset
+      const targetPlace = getTargetPlaceForDate(todayStr, offset);
+      
+      if (!apiKey) {
+        console.warn(`No GEMINI_API_KEY configured. Using fallback dynamic blog generator for offset ${offset}.`);
+        generateFallbackDailyBlog(todayStr, offset);
+        continue;
+      }
+      
+      const ai = new GoogleGenAI({ apiKey });
+      
+      const prompt = 
+        `Write a high-quality, engaging, extremely detailed, and SEO-optimized travel guide article about '${targetPlace.name}' in Sri Lanka. ` +
+        `Focus on keywords like 'best time to visit ${targetPlace.name}', 'things to do in ${targetPlace.name}', 'how to reach ${targetPlace.name}', and local travel safety guidelines. ` +
+        `The total word count of the article MUST be approximately 1000 words. Make the descriptions rich and comprehensive. ` +
+        `Response format MUST be a valid JSON object matching the following fields: ` +
+        `{\n` +
+        `  "id": "bl-dynamic-${Date.now()}-${offset}",\n` +
+        `  "title": "A catchy SEO-friendly title",\n` +
+        `  "excerpt": "A short 1-2 sentence preview excerpt",\n` +
+        `  "author": "IZYSL Travel Guide",\n` +
+        `  "date": "formatted date string e.g. June 22, 2026",\n` +
+        `  "category": "Adventure / Culture / Nature",\n` +
+        `  "imageUrl": "Choose a relevant unsplash photo URL for this location or category",\n` +
+        `  "readTime": "8 min read",\n` +
+        `  "firstParagraph": "Engaging, long introduction paragraph",\n` +
+        `  "tableOfContents": [\n` +
+        `    { "id": "history", "label": "History & Legend" },\n` +
+        `    { "id": "reach", "label": "How to Reach" },\n` +
+        `    { "id": "weather", "label": "Best Time & Weather" },\n` +
+        `    { "id": "activities", "label": "Things to Do" },\n` +
+        `    { "id": "safety", "label": "Safety Tips" }\n` +
+        `  ],\n` +
+        `  "sections": [\n` +
+        `    { "type": "h2", "text": "History & Legend", "id": "history" },\n` +
+        `    { "type": "paragraph", "text": "Very long, detailed paragraph detailing the history, mythology, and cultural background of the site." },\n` +
+        `    { "type": "tweet", "text": "Catchy tweet quote about the location", "tweetText": "Catchy tweet about the location #SriLanka" },\n` +
+        `    { "type": "h2", "text": "How to Reach", "id": "reach" },\n` +
+        `    { "type": "paragraph", "text": "Detailed instructions on how to reach this place from Kandy, Colombo, or Ella, including public transport, trains, or hiring private drivers." },\n` +
+        `    { "type": "h2", "text": "Best Time & Weather", "id": "weather" },\n` +
+        `    { "type": "paragraph", "text": "Detailed description of weather patterns, monsoon seasons, temperature, and when to plan your hike or beach trip." },\n` +
+        `    { "type": "h2", "text": "Things to Do", "id": "activities" },\n` +
+        `    { "type": "paragraph", "text": "A comprehensive list of activities, viewpoints, photo guides, photography tips, and nearby exploration landmarks." },\n` +
+        `    { "type": "h2", "text": "Safety Tips", "id": "safety" },\n` +
+        `    { "type": "paragraph", "text": "Crucial guidelines regarding currents, slippery rocks, local dress codes at temples, guides, and packing essentials." }\n` +
+        `  ],\n` +
+        `  "faqs": [\n` +
+        `    { "question": "Question 1?", "answer": "Answer 1" },\n` +
+        `    { "question": "Question 2?", "answer": "Answer 2" }\n` +
+        `  ]\n` +
+        `}\n` +
+        `Return ONLY the JSON. No markdown wrappers.`;
+
+      const response = await ai.models.generateContent({
+        model: "gemini-3.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+          temperature: 0.8
+        }
+      });
+
+      const text = response.text;
+      if (text) {
+        let newBlog = JSON.parse(text);
+        newBlog = parseMarkdownToBlogFields(newBlog);
+        newBlog.dateCode = todayStr; // tag it with today's date
+        newBlog.offset = offset;
+        
+        // Fallback imageUrl if Gemini doesn't provide a valid one
+        if (!newBlog.imageUrl || !newBlog.imageUrl.startsWith("http")) {
+          newBlog.imageUrl = targetPlace.imageUrls[0] || "https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=800&q=80";
+        }
+
+        const currentList = getDynamicBlogs();
+        currentList.push(newBlog);
+        saveDynamicBlogs(currentList);
+        console.log(`Successfully generated and saved new daily blog (offset ${offset}): ${newBlog.title}`);
+      } else {
+        throw new Error("Empty model response");
+      }
+    } catch (error) {
+      console.error(`Failed to generate dynamic daily blog post for offset ${offset}, calling fallback:`, error);
+      generateFallbackDailyBlog(todayStr, offset);
     }
-  } catch (error) {
-    console.error("Failed to generate dynamic daily blog post, calling fallback:", error);
-    const todayStr = new Date().toISOString().split("T")[0];
-    generateFallbackDailyBlog(todayStr);
   }
 }
 
