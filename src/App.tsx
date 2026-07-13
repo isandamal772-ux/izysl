@@ -967,57 +967,64 @@ export default function App() {
 
           {/* Desktop Navigation Link Tabs */}
           <nav className="hidden md:flex items-center gap-1.5 text-xs font-semibold font-sans">
-            <button 
+            <a 
               id="nav-btn-explore" 
-              onClick={() => setActiveTab("explore")}
+              href="/explore"
+              onClick={(e) => { e.preventDefault(); setActiveTab("explore"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "explore" ? "bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400" : "text-slate-600 dark:text-slate-350 hover:text-slate-900"}`}
             >
               Explore Paradises
-            </button>
-            <button 
+            </a>
+            <a 
               id="nav-btn-map" 
-              onClick={() => setActiveTab("map")}
+              href="/map"
+              onClick={(e) => { e.preventDefault(); setActiveTab("map"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "map" ? "bg-slate-100 dark:bg-slate-800 text-[#0077be] dark:text-[#ffea6c]" : "text-slate-600 dark:text-slate-200 hover:text-slate-900"}`}
             >
               🗺️ Interactive Map
-            </button>
-            <button 
+            </a>
+            <a 
               id="nav-btn-planner" 
-              onClick={() => setActiveTab("planner")}
+              href="/planner"
+              onClick={(e) => { e.preventDefault(); setActiveTab("planner"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "planner" ? "bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400" : "text-slate-600 dark:text-slate-350 hover:text-slate-900"}`}
             >
               🎯 Trip Itinerary Planner
-            </button>
-            <button 
+            </a>
+            <a 
               id="nav-btn-tips" 
-              onClick={() => setActiveTab("tips")}
+              href="/tips"
+              onClick={(e) => { e.preventDefault(); setActiveTab("tips"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "tips" ? "bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400" : "text-slate-600 dark:text-slate-350 hover:text-slate-900"}`}
             >
               🌴 Island Tips
-            </button>
+            </a>
 
-            <button 
+            <a 
               id="nav-btn-blog" 
-              onClick={() => setActiveTab("blog")}
+              href="/blog"
+              onClick={(e) => { e.preventDefault(); setActiveTab("blog"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "blog" ? "bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400" : "text-slate-600 dark:text-slate-350 hover:text-slate-900"}`}
             >
               📝 Articles
-            </button>
+            </a>
 
-            <button 
+            <a 
               id="nav-btn-reviews" 
-              onClick={() => setActiveTab("reviews")}
+              href="/reviews"
+              onClick={(e) => { e.preventDefault(); setActiveTab("reviews"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "reviews" ? "bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400" : "text-slate-600 dark:text-slate-350 hover:text-slate-900"}`}
             >
               📸 Reviews & Gallery
-            </button>
-            <button 
+            </a>
+            <a 
               id="nav-btn-emergency" 
-              onClick={() => setActiveTab("emergency")}
+              href="/emergency"
+              onClick={(e) => { e.preventDefault(); setActiveTab("emergency"); }}
               className={`px-3 focus:outline-none py-1.5 rounded-lg transition-all cursor-pointer ${activeTab === "emergency" ? "bg-slate-100 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400" : "text-slate-600 dark:text-slate-350 hover:text-slate-900"}`}
             >
               ☎️ Directory
-            </button>
+            </a>
           </nav>
 
           {/* Quick Actions (Theme, Language, User Login Profile) */}
@@ -1423,15 +1430,17 @@ export default function App() {
                     const photoCredit = (item as any).imageLicense || (item as any).attribution || "Wikimedia CC BY-SA 4.0";
 
                     return (
-                      <motion.div
+                      <motion.a
+                        href={isPlace ? `/place/${item.id}` : isHotel ? `/hotel/${item.id}` : `/restaurant/${item.id}`}
                         key={item.id}
                         id={`dest-card-${item.id}`}
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.preventDefault();
                           if (isPlace) setSelectedPlace(item as any);
                           else if (isHotel) setSelectedHotel(item as any);
                           else if (isRestaurant) setSelectedRestaurant(item as any);
                         }}
-                        className="bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold-500/10 hover:border-gold-500/40 hover:-translate-y-2 transition-all duration-300 flex flex-col cursor-pointer h-[460px] group"
+                        className="bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-gold-500/10 hover:border-gold-500/40 hover:-translate-y-2 transition-all duration-300 flex flex-col cursor-pointer h-[460px] group block"
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -1498,7 +1507,7 @@ export default function App() {
                             </div>
                           </div>
                         </div>
-                      </motion.div>
+                      </motion.a>
                     );
                   })}
                 </div>
@@ -1661,17 +1670,20 @@ export default function App() {
                   {blogArticles.map((art) => (
                     <article key={art.id} id={`blog-card-${art.id}`} className="chronicle-card bg-white dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
                       <div>
-                        <div className="p-5">
+                        <div className="p-5 text-left">
                           <div className="flex items-center gap-2 text-[10px] text-slate-450 uppercase font-mono mb-2">
                             <span>{art.date}</span>
                             <span>•</span>
                             <span>{art.author}</span>
                           </div>
-                          <h4 
-                            onClick={() => setSelectedBlog(art)}
-                            className="text-sm font-bold font-sans tracking-tight text-slate-800 dark:text-slate-200 hover:text-emerald-500 cursor-pointer"
-                          >
-                            {art.title}
+                          <h4 className="text-sm font-bold font-sans tracking-tight text-slate-800 dark:text-slate-200 hover:text-emerald-500 cursor-pointer">
+                            <a 
+                              href={`/blog/${art.id}`}
+                              onClick={(e) => { e.preventDefault(); setSelectedBlog(art); }}
+                              className="hover:underline"
+                            >
+                              {art.title}
+                            </a>
                           </h4>
                           <p className="text-xs text-slate-550 dark:text-slate-400 mt-2 leading-relaxed line-clamp-4">
                             {art.excerpt}
@@ -1680,13 +1692,14 @@ export default function App() {
                       </div>
 
                       <div className="px-5 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800/60 text-right">
-                        <button 
+                        <a 
                           id={`btn-blog-read-${art.id}`}
-                          onClick={() => setSelectedBlog(art)}
+                          href={`/blog/${art.id}`}
+                          onClick={(e) => { e.preventDefault(); setSelectedBlog(art); }}
                           className="text-emerald-600 dark:text-emerald-400 text-xs font-semibold font-sans hover:underline flex items-center gap-0.5 justify-end cursor-pointer"
                         >
                           Read full chronicle <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
+                        </a>
                       </div>
                     </article>
                   ))}
@@ -4074,55 +4087,62 @@ export default function App() {
       </a>
       {/* Mobile Bottom Navigation Bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-slate-950/95 backdrop-blur-md border-t border-slate-800/85 flex justify-around items-center h-14 pb-safe shadow-[0_-4px_12px_rgba(0,0,0,0.4)]">
-        <button
-          onClick={() => setActiveTab("explore")}
+        <a
+          href="/explore"
+          onClick={(e) => { e.preventDefault(); setActiveTab("explore"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "explore" ? "text-emerald-500" : "text-slate-400 hover:text-slate-200"}`}
         >
           <Compass className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Explore</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("map")}
+        </a>
+        <a
+          href="/map"
+          onClick={(e) => { e.preventDefault(); setActiveTab("map"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "map" ? "text-[#0077be] dark:text-[#ffea6c]" : "text-slate-400 hover:text-slate-200"}`}
         >
           <Map className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Map</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("planner")}
+        </a>
+        <a
+          href="/planner"
+          onClick={(e) => { e.preventDefault(); setActiveTab("planner"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "planner" ? "text-emerald-500" : "text-slate-400 hover:text-slate-200"}`}
         >
           <CheckCircle className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Planner</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("tips")}
+        </a>
+        <a
+          href="/tips"
+          onClick={(e) => { e.preventDefault(); setActiveTab("tips"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "tips" ? "text-emerald-500" : "text-slate-400 hover:text-slate-200"}`}
         >
           <Info className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Tips</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("blog")}
+        </a>
+        <a
+          href="/blog"
+          onClick={(e) => { e.preventDefault(); setActiveTab("blog"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "blog" ? "text-emerald-500" : "text-slate-400 hover:text-slate-200"}`}
         >
           <BookOpen className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Articles</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("reviews")}
+        </a>
+        <a
+          href="/reviews"
+          onClick={(e) => { e.preventDefault(); setActiveTab("reviews"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "reviews" ? "text-emerald-500" : "text-slate-400 hover:text-slate-200"}`}
         >
           <Camera className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Reviews</span>
-        </button>
-        <button
-          onClick={() => setActiveTab("emergency")}
+        </a>
+        <a
+          href="/emergency"
+          onClick={(e) => { e.preventDefault(); setActiveTab("emergency"); }}
           className={`flex flex-col items-center justify-center w-12 h-full gap-0.5 text-center cursor-pointer transition-colors ${activeTab === "emergency" ? "text-emerald-500" : "text-slate-400 hover:text-slate-200"}`}
         >
           <PhoneCall className="w-4 h-4" />
           <span className="text-[9px] font-semibold tracking-wide">Directory</span>
-        </button>
+        </a>
       </div>
 
     </div>
