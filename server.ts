@@ -584,7 +584,7 @@ function injectSEO(html: string, metadata: { title: string, desc: string, image:
 // Prerendering route for blogs
 app.get("/blog/:id", (req, res) => {
   try {
-    const blogs = [...BLOG_ARTICLES, ...getDynamicBlogs()];
+    const blogs = [...BLOG_ARTICLES, ...getDeterministicBlogsForDateRange()];
     const blog = blogs.find(b => b.id === req.params.id);
     if (blog) {
       let html = getIndexHtml();
