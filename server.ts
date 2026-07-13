@@ -540,6 +540,123 @@ app.get("/sitemap.xml", (req, res) => {
   }
 });
 
+function getIndexHtml(): string {
+  const paths = [
+    path.join(process.cwd(), "dist", "index.html"),
+    path.join(__dirname, "dist", "index.html"),
+    path.join(__dirname, "index.html"),
+    path.join(process.cwd(), "index.html")
+  ];
+  for (const p of paths) {
+    if (fs.existsSync(p)) {
+      return fs.readFileSync(p, "utf-8");
+    }
+  }
+  throw new Error("index.html not found");
+}
+
+function injectSEO(html: string, metadata: { title: string, desc: string, image: string, url: string, schema?: string }): string {
+  let replaced = html;
+  
+  // Replace Title
+  replaced = replaced.replace(/<title>.*?<\/title>/, `<title>${metadata.title}</title>`);
+  replaced = replaced.replace(/<meta property="og:title" content=".*?" \/>/g, `<meta property="og:title" content="${metadata.title}" />`);
+  replaced = replaced.replace(/<meta name="twitter:title" content=".*?" \/>/g, `<meta name="twitter:title" content="${metadata.title}" />`);
+  
+  // Replace Description
+  replaced = replaced.replace(/<meta name="description" content=".*?" \/>/g, `<meta name="description" content="${metadata.desc}" />`);
+  replaced = replaced.replace(/<meta property="og:description" content=".*?" \/>/g, `<meta property="og:description" content="${metadata.desc}" />`);
+  replaced = replaced.replace(/<meta name="twitter:description" content=".*?" \/>/g, `<meta name="twitter:description" content="${metadata.desc}" />`);
+  
+  // Replace Image
+  replaced = replaced.replace(/<meta property="og:image" content=".*?" \/>/g, `<meta property="og:image" content="${metadata.image}" />`);
+  replaced = replaced.replace(/<meta name="twitter:image" content=".*?" \/>/g, `<meta name="twitter:image" content="${metadata.image}" />`);
+  
+  // Replace Canonical
+  replaced = replaced.replace(/<link rel="canonical" href=".*?" \/>/g, `<link rel="canonical" href="${metadata.url}" />`);
+  
+  if (metadata.schema) {
+    replaced = replaced.replace("</head>", `${metadata.schema}\n</head>`);
+  }
+  return replaced;
+}
+
+// Prerendering route for blogs
+app.get("/blog/:id", (req, res) => {
+  try {
+    const blogs = [...BLOG_ARTICLES, ...getDynamicBlogs()];
+    const blog = blogs.find(b => b.id === req.params.id);
+    if (blog) {
+      let html = getIndexHtml();
+      const schema = `<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "${blog.title}",
+        "image": "${blog.imageUrl}",
+        "datePublished": "${blog.dateCode || '2026-06-22'}",
+        "description": "${blog.excerpt}",
+        "author": { "@type": "Person", "name": "${blog.author}" }
+      }
+      </script>`;
+      
+      html = injectSEO(html, {
+        title: `${blog.title} - Sri Lanka Travel Blog | IZYSL.COM`,
+        desc: blog.excerpt,
+        image: blog.imageUrl,
+        url: `https://izysl.com/blog/${blog.id}`,
+        schema
+      });
+      res.setHeader("Content-Type", "text/html");
+      return res.send(html);
+    }
+  } catch (e) {
+    console.error("Error rendering blog SEO:", e);
+  }
+  try {
+    return res.send(getIndexHtml());
+  } catch (err) {
+    return res.status(500).send("Server Error");
+  }
+});
+
+// Prerendering route for places
+app.get("/place/:id", (req, res) => {
+  try {
+    const place = PLACES_DATA.find(p => p.id === req.params.id);
+    if (place) {
+      let html = getIndexHtml();
+      const schema = `<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "${place.name}",
+        "description": "${place.description}",
+        "image": "${place.imageUrls[0]}",
+        "address": { "@type": "PostalAddress", "addressLocality": "${place.location}", "addressCountry": "LK" }
+      }
+      </script>`;
+      
+      html = injectSEO(html, {
+        title: `${place.name} Travel Guide & Tips | IZYSL.COM`,
+        desc: place.description,
+        image: place.imageUrls[0],
+        url: `https://izysl.com/place/${place.id}`,
+        schema
+      });
+      res.setHeader("Content-Type", "text/html");
+      return res.send(html);
+    }
+  } catch (e) {
+    console.error("Error rendering place SEO:", e);
+  }
+  try {
+    return res.send(getIndexHtml());
+  } catch (err) {
+    return res.status(500).send("Server Error");
+  }
+});
+
 // Setup and start server if NOT on Vercel
 async function initDevOrProdServer() {
   if (process.env.VERCEL === "1") {
