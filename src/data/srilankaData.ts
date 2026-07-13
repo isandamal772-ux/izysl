@@ -60,8 +60,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Trek guide optional, $10-$15 recommended)",
     bestTime: "September to May",
     imageUrls: [
-      "https://unsplash.com/photos/HiA7oY9XTq8/download?force=true",
-      "https://unsplash.com/photos/jctETpiXEfM/download?force=true"
+      "https://images.unsplash.com/photo-1697811810067-4dcae11d3f77?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1687670944885-ed956fdb486f?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
   },
@@ -80,7 +80,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Included in Horton Plains National Park ticket ($25-$35 per person)",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/ytNk5s_4Wys/download?force=true",
+      "https://images.unsplash.com/photo-1609515286252-3429567a66fd?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -100,7 +100,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/vQKXEfXBSZk/download?force=true",
+      "https://images.unsplash.com/photo-1703566567802-e1945c83f0cb?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -120,7 +120,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1 (approx. 300 LKR)",
     bestTime: "January to March",
     imageUrls: [
-      "https://unsplash.com/photos/baTghOgY8sA/download?force=true",
+      "https://images.unsplash.com/photo-1683041527005-58a56908dd01?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -140,7 +140,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$2.50 (approx. 800 LKR)",
     bestTime: "June to September",
     imageUrls: [
-      "https://unsplash.com/photos/mm-D2F_XbKg/download?force=true",
+      "https://images.unsplash.com/photo-1683604393889-60baf8b7eb15?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1546708973-b339540b5162?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -161,7 +161,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1 (approx. 300 LKR)",
     bestTime: "February to April",
     imageUrls: [
-      "https://unsplash.com/photos/8cQEBc8gfx0/download?force=true",
+      "https://images.unsplash.com/photo-1666331688371-8299c0c5f25c?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -201,7 +201,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/sTHBllmt7o0/download?force=true",
+      "https://images.unsplash.com/photo-1580635553747-1c5eac66ff90?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -221,7 +221,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/A4rDazNFLog/download?force=true",
+      "https://images.unsplash.com/photo-1643741444323-5dbbe8902a98?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -241,7 +241,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/QsrJ3UhMfhM/download?force=true",
+      "https://images.unsplash.com/photo-1762104197915-088ef89e3ecf?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -261,7 +261,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to March",
     imageUrls: [
-      "https://unsplash.com/photos/lpVHWNSCqAA/download?force=true",
+      "https://images.unsplash.com/photo-1715528967461-944793c34723?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -281,7 +281,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free ($1 temple donation appreciated)",
     bestTime: "October to April",
     imageUrls: [
-      "https://unsplash.com/photos/PkcpJd_nMCM/download?force=true",
+      "https://images.unsplash.com/photo-1705730319037-5356f34e9a00?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -301,7 +301,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1 (approx. 300 LKR)",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/z7jwpmy9pJs/download?force=true",
+      "https://images.unsplash.com/photo-1698374744172-48bf7dd19ea4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1472214222541-d510753a4707?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -321,7 +321,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$3 (includes access to adventure park pathways)",
     bestTime: "Year-round (except high monsoon peaks)",
     imageUrls: [
-      "https://unsplash.com/photos/Sd0biKMs7aU/download?force=true",
+      "https://images.unsplash.com/photo-1639401672371-0c4be4389107?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -342,7 +342,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/mfOKP6y9aT0/download?force=true",
+      "https://images.unsplash.com/photo-1639401672398-73bb6dad0d05?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -362,7 +362,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "August to December",
     imageUrls: [
-      "https://unsplash.com/photos/qOJ6GmCXWfI/download?force=true",
+      "https://images.unsplash.com/photo-1639401671822-59ab85b5cd96?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -382,7 +382,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/6H8q7nZn-LE/download?force=true",
+      "https://images.unsplash.com/photo-1643740888378-9bc7637edcc9?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -402,7 +402,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "September to January",
     imageUrls: [
-      "https://unsplash.com/photos/YjpxHOErjsc/download?force=true",
+      "https://images.unsplash.com/photo-1695449902934-92adf5e4b897?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -422,7 +422,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/D1GxVRWZopE/download?force=true",
+      "https://images.unsplash.com/photo-1766735141637-958e3382b9e3?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1472214222541-d510753a4707?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -442,7 +442,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "October to January",
     imageUrls: [
-      "https://unsplash.com/photos/hojwEw-b6J8/download?force=true",
+      "https://images.unsplash.com/photo-1698371083014-e4d534ef76fc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -462,7 +462,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to March",
     imageUrls: [
-      "https://unsplash.com/photos/op0Lbq7vTnA/download?force=true",
+      "https://images.unsplash.com/photo-1621764021299-bb223bc54fc5?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -482,7 +482,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/2dgk2cvcEOE/download?force=true",
+      "https://images.unsplash.com/photo-1678914903641-5f59d34a85da?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -502,7 +502,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/FE2V4VECU-M/download?force=true",
+      "https://images.unsplash.com/photo-1687910612054-74e0990812e3?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -522,7 +522,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/X16S7t0pSRE/download?force=true",
+      "https://images.unsplash.com/photo-1684758110953-5b39d6e86050?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -542,7 +542,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "September to January",
     imageUrls: [
-      "https://unsplash.com/photos/c_XvK1EAH_Y/download?force=true",
+      "https://images.unsplash.com/photo-1678914903735-eeac16d127d8?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -562,7 +562,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/1JeO-jVfREM/download?force=true",
+      "https://images.unsplash.com/photo-1678914906530-86caef9f2fb8?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1546708973-b339540b5162?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -582,7 +582,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to April",
     imageUrls: [
-      "https://unsplash.com/photos/ypBj-HiWUSc/download?force=true",
+      "https://images.unsplash.com/photo-1664699280993-477191bf4470?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -602,7 +602,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/1QKBA1TsGv0/download?force=true",
+      "https://images.unsplash.com/photo-1678914906706-391eebe3a9f4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -622,7 +622,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to March",
     imageUrls: [
-      "https://unsplash.com/photos/7UKylKiiqa8/download?force=true",
+      "https://images.unsplash.com/photo-1672132233676-c82d91834c78?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -642,7 +642,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/z8nvdNSdYO8/download?force=true",
+      "https://images.unsplash.com/photo-1704785088822-f0d342d09bd2?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -662,7 +662,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/7xafIChOeBQ/download?force=true",
+      "https://images.unsplash.com/photo-1700853992849-1e8c0dec91aa?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -682,7 +682,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Donations to temple welcome)",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/VOilcX89UjA/download?force=true",
+      "https://images.unsplash.com/photo-1666107677986-c264fc8f908e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -702,7 +702,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/vykcgjA1dTI/download?force=true",
+      "https://images.unsplash.com/photo-1678914906686-498cdd3bb7fa?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -722,7 +722,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to March",
     imageUrls: [
-      "https://unsplash.com/photos/4f-9KOB13e8/download?force=true",
+      "https://images.unsplash.com/photo-1678914903797-e775cf7a3571?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -742,7 +742,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/SLi_lNSCiqY/download?force=true",
+      "https://images.unsplash.com/photo-1762104198045-9980c21cca10?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -762,7 +762,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/GDmEa1tkL40/download?force=true",
+      "https://images.unsplash.com/photo-1683604393982-7184dd8f03e6?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -782,7 +782,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to March",
     imageUrls: [
-      "https://unsplash.com/photos/r3nKW2Tta-I/download?force=true",
+      "https://images.unsplash.com/photo-1683604393958-df0bef54870a?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -802,7 +802,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/HNoQ3MP-Kzg/download?force=true",
+      "https://images.unsplash.com/photo-1683604394093-a3406a5ff283?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -822,7 +822,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to March",
     imageUrls: [
-      "https://unsplash.com/photos/hiRimCZs0sQ/download?force=true",
+      "https://images.unsplash.com/photo-1621355773011-cad4fa6be15e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -842,7 +842,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to February",
     imageUrls: [
-      "https://unsplash.com/photos/YBQpZR5zVjE/download?force=true",
+      "https://images.unsplash.com/photo-1672131773205-3c92bc7bdc42?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -862,7 +862,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/cy_9E8b2G84/download?force=true",
+      "https://images.unsplash.com/photo-1775974989421-95083213577b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -882,7 +882,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/7U-1xQKVb6Q/download?force=true",
+      "https://images.unsplash.com/photo-1679668646224-0a9b1e95fa55?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1472214222541-d510753a4707?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -908,11 +908,11 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/d_uK0O5qqF0/download?force=true",
-      "https://unsplash.com/photos/bUmutlG6gWY/download?force=true",
-      "https://unsplash.com/photos/l5QjpiLwJ_E/download?force=true",
-      "https://unsplash.com/photos/oaT0G8AE94w/download?force=true",
-      "https://unsplash.com/photos/cuZbrYoimv8/download?force=true"
+      "https://images.unsplash.com/photo-1734279135153-a33f74f2dc2e?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1649856092355-eee498b1d0f2?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1665765415963-28b2fa36df8a?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1734279135115-6d8984e08206?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
   },
@@ -977,7 +977,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/IuTsOjQHius/download?force=true",
+      "https://images.unsplash.com/photo-1594476191313-c2a8d227ce61?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1473116763269-255415695f6b?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -999,7 +999,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Hatchery entry $3-$5)",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/CKEmZAw0Z8c/download?force=true",
+      "https://images.unsplash.com/photo-1552055569-d54ae89a11b7?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1473116763269-255415695f6b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1022,8 +1022,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Museum entry $2)",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/D-TI9Zww3O0/download?force=true",
-      "https://unsplash.com/photos/qYN1gStFuLQ/download?force=true",
+      "https://images.unsplash.com/photo-1561150018-8bb356679537?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1045,7 +1045,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "October to April",
     imageUrls: [
-      "https://unsplash.com/photos/C-s_KWKIgrA/download?force=true",
+      "https://images.unsplash.com/photo-1704797390501-37d39f2f6921?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1068,7 +1068,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/aksPgTprHlo/download?force=true",
+      "https://images.unsplash.com/photo-1657946857561-f42916b66712?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1091,7 +1091,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Dolphin park entry token $5)",
     bestTime: "May to September (Kitesurfing), November to April (Dolphins/Whales)",
     imageUrls: [
-      "https://unsplash.com/photos/uR5TLQJobPY/download?force=true",
+      "https://images.unsplash.com/photo-1584804431210-6fff43aa8abd?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1113,7 +1113,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Boat to Pigeon Island with park ticket ~$30-$40 group)",
     bestTime: "April to October",
     imageUrls: [
-      "https://unsplash.com/photos/MaYOrZIeuU8/download?force=true",
+      "https://images.unsplash.com/photo-1580910531902-1112518b26ea?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1135,7 +1135,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "May to September",
     imageUrls: [
-      "https://unsplash.com/photos/Qx8_d5dGhrs/download?force=true",
+      "https://images.unsplash.com/photo-1519566335946-e6f65f0f4fdf?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -1157,8 +1157,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "May to September",
     imageUrls: [
-      "https://unsplash.com/photos/M683R-S-nPo/download?force=true",
-      "https://unsplash.com/photos/jDMxKFmdy7U/download?force=true",
+      "https://images.unsplash.com/photo-1628431104736-8f04a50a8f86?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1180,7 +1180,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "April to October",
     imageUrls: [
-      "https://unsplash.com/photos/ztFkvmLKTcY/download?force=true",
+      "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1202,8 +1202,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$0.50 LKR (clean beach fee)",
     bestTime: "January to August",
     imageUrls: [
-      "https://unsplash.com/photos/ScBHbYokiQE/download?force=true",
-      "https://unsplash.com/photos/gR88oddXEak/download?force=true",
+      "https://images.unsplash.com/photo-1613693699413-7dde0260f437?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1225,7 +1225,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/rhlV7hF-sVY/download?force=true",
+      "https://images.unsplash.com/photo-1525849306000-cc26ceb5c1d7?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1247,7 +1247,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/VqPOeYqzK-M/download?force=true",
+      "https://images.unsplash.com/photo-1653959699604-1eb000740b57?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -1269,8 +1269,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/5wpeSsXZ93s/download?force=true",
-      "https://unsplash.com/photos/SI9OBANtEx0/download?force=true",
+      "https://images.unsplash.com/photo-1600255821058-c4f89958d700?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License",
@@ -1292,7 +1292,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/6BQyHtYSb5E/download?force=true",
+      "https://images.unsplash.com/photo-1552055568-e9943cd2a08f?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -1315,7 +1315,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/qI6aWFDs7pY/download?force=true",
+      "https://images.unsplash.com/photo-1653959747793-c7c3775665f0?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -1337,7 +1337,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/0uI8LANIe0A/download?force=true",
+      "https://images.unsplash.com/photo-1531201890865-fb64780d16e9?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -1359,7 +1359,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/FHAHnF9C0Sw/download?force=true",
+      "https://images.unsplash.com/photo-1552055568-f8c4fb8c6320?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=450&fit=crop&auto=format&compress"
     ],
     imageLicense: "Unsplash Premium License"
@@ -1403,7 +1403,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/szpz0b1Q6IE/download?force=true",
+      "https://images.unsplash.com/photo-1581420456035-58b8efadcdea?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1473116763269-255415695f6b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1426,9 +1426,9 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "Year-round for birdwatching",
     imageUrls: [
-      "https://unsplash.com/photos/2DsY9_JfEfE/download?force=true",
-      "https://unsplash.com/photos/bUmutlG6gWY/download?force=true",
-      "https://unsplash.com/photos/PiI5kUwt9NI/download?force=true",
+      "https://images.unsplash.com/photo-1724031948257-8b3c68232ccc?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1473,7 +1473,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "May to September (Kitesurfing), November to April (Dolphins)",
     imageUrls: [
-      "https://unsplash.com/photos/BNfe9fpf2Ik/download?force=true",
+      "https://images.unsplash.com/photo-1569670380856-5f541c74121d?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1473116763269-255415695f6b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1496,9 +1496,9 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/Nr3Ysq-RWPA/download?force=true",
-      "https://unsplash.com/photos/bUmutlG6gWY/download?force=true",
-      "https://unsplash.com/photos/DJnXQZD5qKU/download?force=true",
+      "https://images.unsplash.com/photo-1554904636-b8d94ef62915?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1521,7 +1521,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Lighthouse grounds may request a small fee)",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/ueBIGLmiI5A/download?force=true",
+      "https://images.unsplash.com/photo-1460627390041-532a28402358?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1544,8 +1544,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "May to October",
     imageUrls: [
-      "https://unsplash.com/photos/W7gpN91Y33o/download?force=true",
-      "https://unsplash.com/photos/ln8bKRpDT5I/download?force=true",
+      "https://images.unsplash.com/photo-1517053589573-a5473fadffbd?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1568,7 +1568,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "April to September",
     imageUrls: [
-      "https://unsplash.com/photos/qfiSDPQD9Ws/download?force=true",
+      "https://images.unsplash.com/photo-1589534345827-e619f9b2dd2b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1596,7 +1596,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Donations at temple accepted)",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/TsLIyTDgkkY/download?force=true",
+      "https://images.unsplash.com/photo-1566893298691-bfd8e0e62e10?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1578593139811-294b59301eed?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1620,7 +1620,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$30 per person (National Park permit)",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/Rfoctk1XoSc/download?force=true",
+      "https://images.unsplash.com/photo-1695188605657-f741e8cafb1a?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1644,7 +1644,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Small local trail support donation ~$3, LKR 900)",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/l2_8b6Se-q4/download?force=true",
+      "https://images.unsplash.com/photo-1705365291453-7962869cae67?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1668,7 +1668,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/sznpwfFhfrU/download?force=true",
+      "https://images.unsplash.com/photo-1593983913587-361576add259?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1578593139811-294b59301eed?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1692,8 +1692,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/I4emZm0Wam8/download?force=true",
-      "https://unsplash.com/photos/TwojIl0NzMY/download?force=true",
+      "https://images.unsplash.com/photo-1613693687360-8b0d54705746?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1717,7 +1717,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Horton Plains National Park permit required (~$30)",
     bestTime: "February to April",
     imageUrls: [
-      "https://unsplash.com/photos/K0Hr_DKyFhs/download?force=true",
+      "https://images.unsplash.com/photo-1559038331-b246c22254a4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1741,7 +1741,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Vehicle checkpoint registration required)",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/r-vUs1jhhLA/download?force=true",
+      "https://images.unsplash.com/photo-1751247026229-518bfec9b5e6?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1765,7 +1765,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$15 per person (Conservation entrance permit)",
     bestTime: "June to September, December to March",
     imageUrls: [
-      "https://unsplash.com/photos/P_FuVh64Wus/download?force=true",
+      "https://images.unsplash.com/photo-1551600474-3a3c48b23c5e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1555899434-94d1368aa7bf?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1789,7 +1789,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$2 (approx. 600 LKR)",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/5Q7hQfEYZtk/download?force=true",
+      "https://images.unsplash.com/photo-1568918756300-c011aed10362?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1813,7 +1813,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$1 (Lipton's Seat area platform token)",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/wctheJSBTto/download?force=true",
+      "https://images.unsplash.com/photo-1642498383665-abf3c624d60b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1543872084-c7bd3822856f?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1837,7 +1837,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/4f-9KOB13e8/download?force=true",
+      "https://images.unsplash.com/photo-1678914903797-e775cf7a3571?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1862,7 +1862,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/EElqTrAQJHw/download?force=true",
+      "https://images.unsplash.com/photo-1705730340636-99130090f9f4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1886,9 +1886,9 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$10 (per person for forest entry)",
     bestTime: "June to August, December to February",
     imageUrls: [
-      "https://unsplash.com/photos/JFIE7x5lEmE/download?force=true",
-      "https://unsplash.com/photos/ySl4ry2hjP0/download?force=true",
-      "https://unsplash.com/photos/K0Hr_DKyFhs/download?force=true",
+      "https://images.unsplash.com/photo-1721462893612-2e65493f28fb?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1659512821649-a2bb1c6ec537?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1559038331-b246c22254a4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1912,7 +1912,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to April",
     imageUrls: [
-      "https://unsplash.com/photos/tjrJCBj1fs4/download?force=true",
+      "https://images.unsplash.com/photo-1580635849305-4399d586ac5c?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1936,8 +1936,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/ig4rlXpThbw/download?force=true",
-      "https://unsplash.com/photos/TwojIl0NzMY/download?force=true",
+      "https://images.unsplash.com/photo-1602532147151-7fcd9b32ce78?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1472214222541-d510753a4707?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1961,8 +1961,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to April",
     imageUrls: [
-      "https://unsplash.com/photos/2AHaocfuHZI/download?force=true",
-      "https://unsplash.com/photos/BRAxB7j4-LQ/download?force=true",
+      "https://images.unsplash.com/photo-1559038297-2008397bad17?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1711719725618-1d70d2d7b4b4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1508459855340-fb63ac591728?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -1986,7 +1986,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/CnQygvODkOY/download?force=true",
+      "https://images.unsplash.com/photo-1704797389202-7910a4f002ce?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2010,7 +2010,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "June to September, December to March",
     imageUrls: [
-      "https://unsplash.com/photos/KhVYyckCj_8/download?force=true",
+      "https://images.unsplash.com/photo-1704797389171-b209a5ed1a9c?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2034,7 +2034,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/3UoOG3G4ulY/download?force=true",
+      "https://images.unsplash.com/photo-1665510615793-14c4e6196c67?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2058,7 +2058,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/SGxxbmW_-qk/download?force=true",
+      "https://images.unsplash.com/photo-1559038267-380b31b11697?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2082,7 +2082,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to April",
     imageUrls: [
-      "https://unsplash.com/photos/30hDnA800V0/download?force=true",
+      "https://images.unsplash.com/photo-1705730334793-85f16fcb2acb?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2106,7 +2106,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/pRy_eaUr0WE/download?force=true",
+      "https://images.unsplash.com/photo-1705730627125-df8f155d28b4?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2130,7 +2130,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/ll91Cvmo8aM/download?force=true",
+      "https://images.unsplash.com/photo-1644751538500-69487cf63a80?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2154,7 +2154,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/TsbT8L9bvyY/download?force=true",
+      "https://images.unsplash.com/photo-1680504539363-edced23ade4d?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2178,7 +2178,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free (Registration required at base gate)",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/8HKkyQZfIes/download?force=true",
+      "https://images.unsplash.com/photo-1697383971424-f30363c9fdef?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2202,7 +2202,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to May",
     imageUrls: [
-      "https://unsplash.com/photos/FnVbYbTbE_E/download?force=true",
+      "https://images.unsplash.com/photo-1639532983125-2c52dc007f5c?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2226,8 +2226,8 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/o8TX7vtceUA/download?force=true",
-      "https://unsplash.com/photos/q5x1VFFUit0/download?force=true",
+      "https://images.unsplash.com/photo-1679668645948-22d881d51435?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1679668645563-ffc90dc328ec?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1546708973-b339540b5162?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2251,7 +2251,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to April",
     imageUrls: [
-      "https://unsplash.com/photos/hQjjzYU1BOA/download?force=true",
+      "https://images.unsplash.com/photo-1559038300-2c1c9d6d7d5f?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2275,7 +2275,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "December to May",
     imageUrls: [
-      "https://unsplash.com/photos/_XKfeJjbNW8/download?force=true",
+      "https://images.unsplash.com/photo-1642670022167-3df5e498cd8d?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2301,9 +2301,9 @@ export const PLACES_DATA: Place[] = [
     jeepBooking: "Easily booked in advance online, or arranged directly at the entrance gates of Palatupana (Tissamaharama). Only authorized 4WD open-top safari jeeps are allowed.",
     bestTime: "February to June (Dry season when animals gather around water holes)",
     imageUrls: [
-      "https://unsplash.com/photos/HK8-s14KYWs/download?force=true",
-      "https://unsplash.com/photos/c33FdqxHKxE/download?force=true",
-      "https://unsplash.com/photos/QMAOXqlLn5Q/download?force=true",
+      "https://images.unsplash.com/photo-1656159625990-8cd23231c218?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1558791985-4241e4011215?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1581888227599-779811939961?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2325,7 +2325,7 @@ export const PLACES_DATA: Place[] = [
     jeepBooking: "Can be booked at the park headquarters in Hunuwilgama (near Anuradhapura). Recommended to secure a morning slot.",
     bestTime: "February to October",
     imageUrls: [
-      "https://unsplash.com/photos/PPGM2ZpCrzc/download?force=true",
+      "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1546483875-1e37bc1dfa16?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2347,7 +2347,7 @@ export const PLACES_DATA: Place[] = [
     jeepBooking: "Booked easily at the main park gate in Udawalawe. ETH feeding times (9 AM, 12 PM, 3 PM, 6 PM) are a must-watch.",
     bestTime: "Year-round (specifically dry September to October)",
     imageUrls: [
-      "https://unsplash.com/photos/kKeC_lgVs_o/download?force=true",
+      "https://images.unsplash.com/photo-1705936981588-a4192f66fcfb?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1504470695779-75300268aa0e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1563691160-cfdfae35f3b7?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2369,7 +2369,7 @@ export const PLACES_DATA: Place[] = [
     jeepBooking: "Arranged at the park entrance gate along the Habarana-Polonnaruwa road. Book early afternoon slots for 'The Gathering' sighting.",
     bestTime: "July to October (Peak dry months when 'The Gathering' occurs)",
     imageUrls: [
-      "https://unsplash.com/photos/pRxm8cc953U/download?force=true",
+      "https://images.unsplash.com/photo-1695173987873-6f157a2d6ad1?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2391,8 +2391,8 @@ export const PLACES_DATA: Place[] = [
     jeepBooking: "Booked directly at the park gate in Gal Oya. Safeguarded safari vehicles with skilled local tracker drivers are recommended.",
     bestTime: "August to December",
     imageUrls: [
-      "https://unsplash.com/photos/P562lXSaebE/download?force=true",
-      "https://unsplash.com/photos/sqFXYAByjAE/download?force=true",
+      "https://images.unsplash.com/photo-1635728695734-365b13844d86?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1472214222541-d510753a4707?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2414,8 +2414,8 @@ export const PLACES_DATA: Place[] = [
     jeepBooking: "Easily booked at the park entrance gate near Weligatta along the Colombo-Hambantota highway.",
     bestTime: "September to March (Migratory bird peak wintering season)",
     imageUrls: [
-      "https://unsplash.com/photos/JLBYAmrR3z4/download?force=true",
-      "https://unsplash.com/photos/YHh8_TMGSI4/download?force=true",
+      "https://images.unsplash.com/photo-1580635849337-6083be4b133e?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2440,7 +2440,7 @@ export const PLACES_DATA: Place[] = [
     history: "Created as an impregnable fortress state and premium royal palace by King Kasyapa (477–495 AD). Following Kasyapa's battlefield defeat, it was returned to a forest Buddhist monastery, eventually covered by jungle until British rediscovery in 1831.",
     bestTime: "Year-round (climb at 7 AM or 3:30 PM to avoid extreme heat)",
     imageUrls: [
-      "https://unsplash.com/photos/2vNC1J_TafQ/download?force=true",
+      "https://images.unsplash.com/photo-1711100360031-24aaccbcd408?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1588598126710-bb97444c133a?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2461,7 +2461,7 @@ export const PLACES_DATA: Place[] = [
     history: "Founded by King Valagamba who converted the caves into a temple in gratitude for sanctuary. Later kings, including Nissanka Malla of Polonnaruwa, expanded and gilded the statues' gold leaf layers, earning the name 'Swarna Giri' (Golden Mountain).",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/BojD1DaERcE/download?force=true",
+      "https://images.unsplash.com/photo-1582103517762-613cc237349b?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1608958416701-dfc534e320d7?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2482,7 +2482,7 @@ export const PLACES_DATA: Place[] = [
     history: "The tooth relic was smuggled from Kalinga, India, hidden inside the hair of Princess Hemamala. It survived wars and colonial invasions, ending in its current beautiful sanctuary. It is celebrated annually in the grand Kandy Esala Perahera pageant.",
     bestTime: "July to August (Esela Perahera festival), otherwise year-round",
     imageUrls: [
-      "https://unsplash.com/photos/Xj28T1jQSlc/download?force=true",
+      "https://images.unsplash.com/photo-1665849049123-2166b90b7b4c?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1625127188970-7168727e4e3e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2503,8 +2503,8 @@ export const PLACES_DATA: Place[] = [
     history: "Portugal landed in Galle in 1505 by storm. The Dutch captured Galle in 1640, erecting the current fortress. Captured by the British in 1796, it survived the 2004 Indian Ocean tsunami structurally unscathed due to its massive granite ramparts.",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/iitTkHI4Tqw/download?force=true",
-      "https://unsplash.com/photos/JF2nkUK_wnI/download?force=true",
+      "https://images.unsplash.com/photo-1704797390682-76479a29dc9a?w=800&h=450&fit=crop&auto=format&compress",
+      "https://images.unsplash.com/photo-1524413151-23fcfcfcfcfc?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2525,7 +2525,7 @@ export const PLACES_DATA: Place[] = [
     history: "Founded in 377 BC by King Pandukabhaya. It hosted highly advanced agricultural irrigation tank networks, serving as the center of Theravada Buddhist learning until South Indian Chola invasions in 993 AD led to its relocation.",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/UeSfcl4xreE/download?force=true",
+      "https://images.unsplash.com/photo-1621393614326-2f9ed389ce02?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2546,7 +2546,7 @@ export const PLACES_DATA: Place[] = [
     history: "Built as the second capital by King Vijayabahu I after defeating Chola invaders in 1070. Reached its height under Parakramabahu I, who constructed advanced canals, giant stupas, and grand monasteries, eventually abandoned in the 13th century.",
     bestTime: "Year-round",
     imageUrls: [
-      "https://unsplash.com/photos/NjELNF_q4UY/download?force=true",
+      "https://images.unsplash.com/photo-1709729508706-87741ec2d50a?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2568,7 +2568,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to April",
     imageUrls: [
-      "https://unsplash.com/photos/jpTT_SAU034/download?force=true",
+      "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1472214222541-d510753a4707?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2589,7 +2589,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "January to March",
     imageUrls: [
-      "https://unsplash.com/photos/Wak57_M4JKM/download?force=true",
+      "https://images.unsplash.com/photo-1609681980718-340e7f4b11d7?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1475113548554-5a36f1f523d6?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2610,7 +2610,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "Free",
     bestTime: "November to April",
     imageUrls: [
-      "https://unsplash.com/photos/ytNk5s_4Wys/download?force=true",
+      "https://images.unsplash.com/photo-1609515286252-3429567a66fd?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2633,7 +2633,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "200 LKR (nominal park entrance)",
     bestTime: "April and August (season months)",
     imageUrls: [
-      "https://unsplash.com/photos/PuWCoG8WHok/download?force=true",
+      "https://images.unsplash.com/photo-1619974643633-12acfdcedd16?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2655,7 +2655,7 @@ export const PLACES_DATA: Place[] = [
     entranceFee: "$20 USD for foreigners / nominal LKR rate for locals",
     bestTime: "Year-Round, evenings",
     imageUrls: [
-      "https://unsplash.com/photos/w6F3kpiwu6w/download?force=true",
+      "https://images.unsplash.com/photo-1747063812497-8b7ac1f20a77?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=800&h=450&fit=crop&auto=format&compress",
       "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?w=800&h=450&fit=crop&auto=format&compress"
     ],
@@ -2936,7 +2936,7 @@ export const RESTAURANTS_DATA: Restaurant[] = [
     menuHighlights: ["Five-course Tea Infused Dinner", "Ceylon Tea Mojito", "Slow Roasted Hill Country Lamb Casserole"],
     priceRange: "$50 - $120 per meal",
     description: "Elite culinary artistry located within the luxurious Ceylon Tea Trails bungalows, where each dish is subtly matched with different fine tea grades.",
-    imageUrl: "https://unsplash.com/photos/2nf-2xBDgfQ/download?force=true",
+    imageUrl: "https://images.unsplash.com/photo-1621627738587-ca6d55e2d585?w=800&h=450&fit=crop&auto=format&compress",
     rating: 4.9,
     location: "Castlereagh Lake, Hatton",
     latitude: 6.8825,
