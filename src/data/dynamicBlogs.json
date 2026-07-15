@@ -886,5 +886,386 @@
     ],
     "dateCode": "2026-07-14",
     "offset": 2
+  },
+  {
+    "id": "bl-dynamic-fallback-mt-hortonplains-1784083021799-0",
+    "title": "Horton Plains World's End: The Ultimate ~1000-Word Explorer Guide",
+    "excerpt": "A high-altitude windswept montane plateau terminating in World's End—a sheer 880m vertical cliff drop-off.",
+    "author": "IZYSL Guide Bot",
+    "date": "July 15, 2026",
+    "category": "Adventure",
+    "imageUrl": "https://images.unsplash.com/photo-1695188605657-f741e8cafb1a?w=800&h=450&fit=crop&auto=format&compress",
+    "readTime": "8 min read",
+    "firstParagraph": "Welcome to the comprehensive explorer's guide to Horton Plains World's End, one of the most stunning destinations in Ohiya, Central Highlands, Sri Lanka. In this detailed travel article, we'll cover everything you need to know before visiting.",
+    "tableOfContents": [
+      {
+        "id": "intro-history",
+        "label": "Introduction & History"
+      },
+      {
+        "id": "location-reach",
+        "label": "How to Reach"
+      },
+      {
+        "id": "weather-timing",
+        "label": "Best Time & Weather"
+      },
+      {
+        "id": "fees-hours",
+        "label": "Entry Fees & Hours"
+      },
+      {
+        "id": "activities",
+        "label": "Top Things to Do"
+      },
+      {
+        "id": "nearby",
+        "label": "Nearby Attractions"
+      },
+      {
+        "id": "safety",
+        "label": "Safety Guidelines"
+      }
+    ],
+    "sections": [
+      {
+        "type": "h2",
+        "text": "Introduction & Historical Context",
+        "id": "intro-history"
+      },
+      {
+        "type": "paragraph",
+        "text": "The pristine mountain sanctuary and hidden landscape of Horton Plains World's End in Ohiya, Central Highlands holds a deep-rooted history in the hearts of the highland people. For generations, this mountain peak and lush valleys have served as a symbol of resilience, adventure, and natural harmony. Local indigenous legends describe the high summits as the sacred dwelling places of protective deities, where ancient sages ascended to seek quiet meditation and spiritual clarity. In the 19th century, during the tea boom, British explorers and local highland guides mapped out these towering ridges, identifying rich microclimates suited for premium tea cultivation. Today, Horton Plains World's End continues to inspire wanderlust, standing as an iconic destination for alpine trekkers, birdwatchers, and soul-seeking travelers."
+      },
+      {
+        "type": "tweet",
+        "text": "Exploring the breathtaking history of Horton Plains World's End in Sri Lanka! An absolute must-visit destination. #SriLanka #TravelGuide",
+        "tweetText": "Exploring the breathtaking history of Horton Plains World's End in Sri Lanka! 🇱🇰"
+      },
+      {
+        "type": "h2",
+        "text": "How to Get There & Location Details",
+        "id": "location-reach"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nestled in the majestic hill country district of Ohiya, Central Highlands, Horton Plains World's End presents a thrilling and scenic journey. The peak is reachable via winding mountain highways, scenic train routes, and rustic hiking trails that wind past cascading streams, emerald tea estates, and local mountain communities. Travelers regularly reach the area from core mountain hubs like Ella, Nuwara Eliya, or Hatton. Friendly local guiding crews are available to lead you up the forest paths, ensuring you safely navigate the mountain terrain."
+      },
+      {
+        "type": "h2",
+        "text": "Best Time to Visit & Weather Conditions",
+        "id": "weather-timing"
+      },
+      {
+        "type": "paragraph",
+        "text": "To enjoy panoramic views of the central highlands, plan your visit during the dry winter window of December to April. During these months, mornings are crisp, cold, and beautifully clear, with temperatures ranging from a refreshing 12°C to 18°C. This clear season guarantees that you reach the mountain viewpoints before the dense highland cloud cover and mist sets in by midday. Rainfall is minimal, making the trekking paths dry, safe, and entirely free of mud."
+      },
+      {
+        "type": "h2",
+        "text": "Entry Fees, Tickets, and Opening Hours",
+        "id": "fees-hours"
+      },
+      {
+        "type": "paragraph",
+        "text": "Entering Horton Plains World's End is highly affordable, with ticket fees of approximately $30 per person (National Park permit) which are utilized for forest conservation, trash management, and maintaining hiking trails. Trails are open from 5:30 AM to 6:00 PM. Hikers are highly advised to begin their summit quest long before dawn, around 5:00 AM, to witness the spectacular sunrise over the endless mountain ridges."
+      },
+      {
+        "type": "h2",
+        "text": "Top Things to Do & Activities",
+        "id": "activities"
+      },
+      {
+        "type": "paragraph",
+        "text": "A trip to Horton Plains World's End offers numerous rewarding mountain activities. Hiking to the highest viewpoints is the core adventure, giving you a chance to see a wide variety of highland birds and exotic flora. Photography tips: The dramatic soft morning light on the tea fields creates stunning layers of light and shadow. Use a telephoto lens or zoom in to isolate the patterns of the tea bushes, or use a wide-angle lens with low ISO to capture the vastness of the mountain valley. You can also camp under the stars at designated eco-sites, tour century-old tea factories, and enjoy local mountain-grown coffee."
+      },
+      {
+        "type": "h2",
+        "text": "Nearby Attractions to Explore",
+        "id": "nearby"
+      },
+      {
+        "type": "paragraph",
+        "text": "The area surrounding Horton Plains World's End is packed with mountain landmarks. You can hike the nearby rock peaks, visit beautiful cascading waterfalls, or explore historical railway bridges that span the mountain valleys. Cozy tea-country bungalows, local strawberry farms, and cool botanical gardens are also nearby, making it easy to plan a multi-day hill country itinerary."
+      },
+      {
+        "type": "h2",
+        "text": "Crucial Safety Guidelines & Local Regulations",
+        "id": "safety"
+      },
+      {
+        "type": "paragraph",
+        "text": "When trekking in mountainous high-altitude terrains, safety is key. Stick strictly to the marked hiking trails to avoid getting lost in the dense cloud forest and to protect the delicate mountain shrublands. Wear high-quality trailing boots with good grip, and pack a light rain poncho and thermal layer, as weather in the mountains can change instantly. Carry enough water in a reusable thermo-bottle, never litter, and always check the local weather forecasts before setting off."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the best time to visit Horton Plains World's End?",
+        "answer": "November to April"
+      },
+      {
+        "question": "Is there an entrance fee for Horton Plains World's End?",
+        "answer": "$30 per person (National Park permit)"
+      }
+    ],
+    "relatedPosts": [
+      "bl-train",
+      "bl-beaches"
+    ],
+    "dateCode": "2026-07-15",
+    "offset": 0
+  },
+  {
+    "id": "bl-dynamic-fallback-sf-yala-1784083021799-1",
+    "title": "Yala National Park: The Ultimate ~1000-Word Explorer Guide",
+    "excerpt": "World-famous for having the highest density of leopards on earth, set against a dramatic semi-arid coastline.",
+    "author": "IZYSL Guide Bot",
+    "date": "July 15, 2026",
+    "category": "Nature",
+    "imageUrl": "https://images.unsplash.com/photo-1656159625990-8cd23231c218?w=800&h=450&fit=crop&auto=format&compress",
+    "readTime": "8 min read",
+    "firstParagraph": "Welcome to the comprehensive explorer's guide to Yala National Park, one of the most stunning destinations in Hambantota / Monaragala Districts, Sri Lanka. In this detailed travel article, we'll cover everything you need to know before visiting.",
+    "tableOfContents": [
+      {
+        "id": "intro-history",
+        "label": "Introduction & History"
+      },
+      {
+        "id": "location-reach",
+        "label": "How to Reach"
+      },
+      {
+        "id": "weather-timing",
+        "label": "Best Time & Weather"
+      },
+      {
+        "id": "fees-hours",
+        "label": "Entry Fees & Hours"
+      },
+      {
+        "id": "activities",
+        "label": "Top Things to Do"
+      },
+      {
+        "id": "nearby",
+        "label": "Nearby Attractions"
+      },
+      {
+        "id": "safety",
+        "label": "Safety Guidelines"
+      }
+    ],
+    "sections": [
+      {
+        "type": "h2",
+        "text": "Introduction & Historical Context",
+        "id": "intro-history"
+      },
+      {
+        "type": "paragraph",
+        "text": "The pristine mountain sanctuary and hidden landscape of Yala National Park in Hambantota / Monaragala Districts holds a deep-rooted history in the hearts of the highland people. For generations, this mountain peak and lush valleys have served as a symbol of resilience, adventure, and natural harmony. Local indigenous legends describe the high summits as the sacred dwelling places of protective deities, where ancient sages ascended to seek quiet meditation and spiritual clarity. In the 19th century, during the tea boom, British explorers and local highland guides mapped out these towering ridges, identifying rich microclimates suited for premium tea cultivation. Today, Yala National Park continues to inspire wanderlust, standing as an iconic destination for alpine trekkers, birdwatchers, and soul-seeking travelers."
+      },
+      {
+        "type": "tweet",
+        "text": "Exploring the breathtaking history of Yala National Park in Sri Lanka! An absolute must-visit destination. #SriLanka #TravelGuide",
+        "tweetText": "Exploring the breathtaking history of Yala National Park in Sri Lanka! 🇱🇰"
+      },
+      {
+        "type": "h2",
+        "text": "How to Get There & Location Details",
+        "id": "location-reach"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nestled in the majestic hill country district of Hambantota / Monaragala Districts, Yala National Park presents a thrilling and scenic journey. The peak is reachable via winding mountain highways, scenic train routes, and rustic hiking trails that wind past cascading streams, emerald tea estates, and local mountain communities. Travelers regularly reach the area from core mountain hubs like Ella, Nuwara Eliya, or Hatton. Friendly local guiding crews are available to lead you up the forest paths, ensuring you safely navigate the mountain terrain."
+      },
+      {
+        "type": "h2",
+        "text": "Best Time to Visit & Weather Conditions",
+        "id": "weather-timing"
+      },
+      {
+        "type": "paragraph",
+        "text": "To enjoy panoramic views of the central highlands, plan your visit during the dry winter window of December to April. During these months, mornings are crisp, cold, and beautifully clear, with temperatures ranging from a refreshing 12°C to 18°C. This clear season guarantees that you reach the mountain viewpoints before the dense highland cloud cover and mist sets in by midday. Rainfall is minimal, making the trekking paths dry, safe, and entirely free of mud."
+      },
+      {
+        "type": "h2",
+        "text": "Entry Fees, Tickets, and Opening Hours",
+        "id": "fees-hours"
+      },
+      {
+        "type": "paragraph",
+        "text": "Entering Yala National Park is highly affordable, with ticket fees of approximately Free admission which are utilized for forest conservation, trash management, and maintaining hiking trails. Trails are open from 5:30 AM to 6:00 PM. Hikers are highly advised to begin their summit quest long before dawn, around 5:00 AM, to witness the spectacular sunrise over the endless mountain ridges."
+      },
+      {
+        "type": "h2",
+        "text": "Top Things to Do & Activities",
+        "id": "activities"
+      },
+      {
+        "type": "paragraph",
+        "text": "A trip to Yala National Park offers numerous rewarding mountain activities. Hiking to the highest viewpoints is the core adventure, giving you a chance to see a wide variety of highland birds and exotic flora. Photography tips: The dramatic soft morning light on the tea fields creates stunning layers of light and shadow. Use a telephoto lens or zoom in to isolate the patterns of the tea bushes, or use a wide-angle lens with low ISO to capture the vastness of the mountain valley. You can also camp under the stars at designated eco-sites, tour century-old tea factories, and enjoy local mountain-grown coffee."
+      },
+      {
+        "type": "h2",
+        "text": "Nearby Attractions to Explore",
+        "id": "nearby"
+      },
+      {
+        "type": "paragraph",
+        "text": "The area surrounding Yala National Park is packed with mountain landmarks. You can hike the nearby rock peaks, visit beautiful cascading waterfalls, or explore historical railway bridges that span the mountain valleys. Cozy tea-country bungalows, local strawberry farms, and cool botanical gardens are also nearby, making it easy to plan a multi-day hill country itinerary."
+      },
+      {
+        "type": "h2",
+        "text": "Crucial Safety Guidelines & Local Regulations",
+        "id": "safety"
+      },
+      {
+        "type": "paragraph",
+        "text": "When trekking in mountainous high-altitude terrains, safety is key. Stick strictly to the marked hiking trails to avoid getting lost in the dense cloud forest and to protect the delicate mountain shrublands. Wear high-quality trailing boots with good grip, and pack a light rain poncho and thermal layer, as weather in the mountains can change instantly. Carry enough water in a reusable thermo-bottle, never litter, and always check the local weather forecasts before setting off."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the best time to visit Yala National Park?",
+        "answer": "February to June (Dry season when animals gather around water holes)"
+      },
+      {
+        "question": "Is there an entrance fee for Yala National Park?",
+        "answer": "Entry details can vary; please check with the park gates."
+      }
+    ],
+    "relatedPosts": [
+      "bl-train",
+      "bl-beaches"
+    ],
+    "dateCode": "2026-07-15",
+    "offset": 1
+  },
+  {
+    "id": "bl-dynamic-fallback-sf-wilpattu-1784083021799-2",
+    "title": "Wilpattu National Park: The Ultimate ~1000-Word Explorer Guide",
+    "excerpt": "The largest national park in Sri Lanka, distinguished by beautiful natural sand-rimmed water basins called Villus.",
+    "author": "IZYSL Guide Bot",
+    "date": "July 15, 2026",
+    "category": "Nature",
+    "imageUrl": "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=800&h=450&fit=crop&auto=format&compress",
+    "readTime": "8 min read",
+    "firstParagraph": "Welcome to the comprehensive explorer's guide to Wilpattu National Park, one of the most stunning destinations in Anuradhapura / Puttalam Districts, Sri Lanka. In this detailed travel article, we'll cover everything you need to know before visiting.",
+    "tableOfContents": [
+      {
+        "id": "intro-history",
+        "label": "Introduction & History"
+      },
+      {
+        "id": "location-reach",
+        "label": "How to Reach"
+      },
+      {
+        "id": "weather-timing",
+        "label": "Best Time & Weather"
+      },
+      {
+        "id": "fees-hours",
+        "label": "Entry Fees & Hours"
+      },
+      {
+        "id": "activities",
+        "label": "Top Things to Do"
+      },
+      {
+        "id": "nearby",
+        "label": "Nearby Attractions"
+      },
+      {
+        "id": "safety",
+        "label": "Safety Guidelines"
+      }
+    ],
+    "sections": [
+      {
+        "type": "h2",
+        "text": "Introduction & Historical Context",
+        "id": "intro-history"
+      },
+      {
+        "type": "paragraph",
+        "text": "The pristine mountain sanctuary and hidden landscape of Wilpattu National Park in Anuradhapura / Puttalam Districts holds a deep-rooted history in the hearts of the highland people. For generations, this mountain peak and lush valleys have served as a symbol of resilience, adventure, and natural harmony. Local indigenous legends describe the high summits as the sacred dwelling places of protective deities, where ancient sages ascended to seek quiet meditation and spiritual clarity. In the 19th century, during the tea boom, British explorers and local highland guides mapped out these towering ridges, identifying rich microclimates suited for premium tea cultivation. Today, Wilpattu National Park continues to inspire wanderlust, standing as an iconic destination for alpine trekkers, birdwatchers, and soul-seeking travelers."
+      },
+      {
+        "type": "tweet",
+        "text": "Exploring the breathtaking history of Wilpattu National Park in Sri Lanka! An absolute must-visit destination. #SriLanka #TravelGuide",
+        "tweetText": "Exploring the breathtaking history of Wilpattu National Park in Sri Lanka! 🇱🇰"
+      },
+      {
+        "type": "h2",
+        "text": "How to Get There & Location Details",
+        "id": "location-reach"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nestled in the majestic hill country district of Anuradhapura / Puttalam Districts, Wilpattu National Park presents a thrilling and scenic journey. The peak is reachable via winding mountain highways, scenic train routes, and rustic hiking trails that wind past cascading streams, emerald tea estates, and local mountain communities. Travelers regularly reach the area from core mountain hubs like Ella, Nuwara Eliya, or Hatton. Friendly local guiding crews are available to lead you up the forest paths, ensuring you safely navigate the mountain terrain."
+      },
+      {
+        "type": "h2",
+        "text": "Best Time to Visit & Weather Conditions",
+        "id": "weather-timing"
+      },
+      {
+        "type": "paragraph",
+        "text": "To enjoy panoramic views of the central highlands, plan your visit during the dry winter window of December to April. During these months, mornings are crisp, cold, and beautifully clear, with temperatures ranging from a refreshing 12°C to 18°C. This clear season guarantees that you reach the mountain viewpoints before the dense highland cloud cover and mist sets in by midday. Rainfall is minimal, making the trekking paths dry, safe, and entirely free of mud."
+      },
+      {
+        "type": "h2",
+        "text": "Entry Fees, Tickets, and Opening Hours",
+        "id": "fees-hours"
+      },
+      {
+        "type": "paragraph",
+        "text": "Entering Wilpattu National Park is highly affordable, with ticket fees of approximately Free admission which are utilized for forest conservation, trash management, and maintaining hiking trails. Trails are open from 5:30 AM to 6:00 PM. Hikers are highly advised to begin their summit quest long before dawn, around 5:00 AM, to witness the spectacular sunrise over the endless mountain ridges."
+      },
+      {
+        "type": "h2",
+        "text": "Top Things to Do & Activities",
+        "id": "activities"
+      },
+      {
+        "type": "paragraph",
+        "text": "A trip to Wilpattu National Park offers numerous rewarding mountain activities. Hiking to the highest viewpoints is the core adventure, giving you a chance to see a wide variety of highland birds and exotic flora. Photography tips: The dramatic soft morning light on the tea fields creates stunning layers of light and shadow. Use a telephoto lens or zoom in to isolate the patterns of the tea bushes, or use a wide-angle lens with low ISO to capture the vastness of the mountain valley. You can also camp under the stars at designated eco-sites, tour century-old tea factories, and enjoy local mountain-grown coffee."
+      },
+      {
+        "type": "h2",
+        "text": "Nearby Attractions to Explore",
+        "id": "nearby"
+      },
+      {
+        "type": "paragraph",
+        "text": "The area surrounding Wilpattu National Park is packed with mountain landmarks. You can hike the nearby rock peaks, visit beautiful cascading waterfalls, or explore historical railway bridges that span the mountain valleys. Cozy tea-country bungalows, local strawberry farms, and cool botanical gardens are also nearby, making it easy to plan a multi-day hill country itinerary."
+      },
+      {
+        "type": "h2",
+        "text": "Crucial Safety Guidelines & Local Regulations",
+        "id": "safety"
+      },
+      {
+        "type": "paragraph",
+        "text": "When trekking in mountainous high-altitude terrains, safety is key. Stick strictly to the marked hiking trails to avoid getting lost in the dense cloud forest and to protect the delicate mountain shrublands. Wear high-quality trailing boots with good grip, and pack a light rain poncho and thermal layer, as weather in the mountains can change instantly. Carry enough water in a reusable thermo-bottle, never litter, and always check the local weather forecasts before setting off."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the best time to visit Wilpattu National Park?",
+        "answer": "February to October"
+      },
+      {
+        "question": "Is there an entrance fee for Wilpattu National Park?",
+        "answer": "Entry details can vary; please check with the park gates."
+      }
+    ],
+    "relatedPosts": [
+      "bl-train",
+      "bl-beaches"
+    ],
+    "dateCode": "2026-07-15",
+    "offset": 2
   }
 ]
